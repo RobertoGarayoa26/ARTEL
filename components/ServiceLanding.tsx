@@ -25,14 +25,14 @@ export function ServiceLanding({ service: s }: { service: Service }) {
               loop
               playsInline
               poster={s.heroPoster || s.heroImage}
-              className="h-full w-full object-cover opacity-30"
+              className="h-full w-full object-cover opacity-45"
             >
               <source src={s.heroVideo} type="video/mp4" />
             </video>
           ) : (
-            <Image src={s.heroImage} alt="" fill priority className="object-cover opacity-30" />
+            <Image src={s.heroImage} alt="" fill priority className="object-cover opacity-45" />
           )}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/85 to-ink" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/75 to-ink" />
         </div>
 
         <div className="container-x py-20 md:py-28">

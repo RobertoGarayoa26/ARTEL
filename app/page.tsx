@@ -27,9 +27,9 @@ export default function HomePage() {
             alt=""
             fill
             priority
-            className="object-cover opacity-30"
+            className="object-cover opacity-45"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/85 to-ink" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/75 to-ink" />
           <div className="absolute inset-0 bg-grid-faint [background-size:56px_56px] opacity-40" />
         </div>
 

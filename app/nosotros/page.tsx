@@ -59,8 +59,8 @@ export default function NosotrosPage() {
     <>
       <section className="relative overflow-hidden pt-28 pb-16 md:pt-36">
         <div className="absolute inset-0 -z-10">
-          <Image src="/media/subestaciones-2.webp" alt="" fill priority className="object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/88 to-ink" />
+          <Image src="/media/subestaciones-2.webp" alt="" fill priority className="object-cover opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/78 to-ink" />
         </div>
         <div className="container-x">
           <Reveal>
