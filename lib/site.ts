@@ -25,6 +25,7 @@ export const site = {
       street: 'Eje 3 Norte, San Isidro 680',
       city: 'Ciudad de México',
       state: 'CDMX',
+      zip: '06500',
       country: 'MX',
     },
     // Coordenadas PLACEHOLDER (CDMX). Reemplaza por las de tu sede.
