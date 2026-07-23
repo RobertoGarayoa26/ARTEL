@@ -150,9 +150,12 @@ export function ServiceLanding({ service: s }: { service: Service }) {
                   className={`relative overflow-hidden rounded-xl ring-1 ring-white/10 ${
                     s.slug === 'telecom-gabinetes'
                       ? 'col-span-2 h-52'
-                      : i === 0
+                      : s.slug === 'energia-solar-ev' &&
+                          (g === '/media/solar-1.webp' || g === '/media/solar-2.webp')
                         ? 'col-span-2 h-52'
-                        : 'h-36'
+                        : i === 0
+                          ? 'col-span-2 h-52'
+                          : 'h-36'
                   }`}
                 >
                   <Image src={g} alt={s.shortName} fill sizes="(max-width:1024px) 50vw, 25vw" className="object-cover" />
