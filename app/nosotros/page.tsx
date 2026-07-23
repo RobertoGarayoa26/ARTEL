@@ -69,9 +69,8 @@ export default function NosotrosPage() {
               Ingeniería e integración de infraestructura crítica
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-steel-300">
-              ARTEL es un fabricante e integrador de ingeniería. Unificamos energía, climatización,
-              telecomunicaciones y movilidad eléctrica bajo un mismo estándar técnico, para que
-              nuestros clientes operen con menos proveedores y menos riesgo.
+              10 años fabricando e integrando infraestructura eléctrica, climatización, telecom y
+              movilidad eléctrica. Un solo proveedor, un mismo estándar de ingeniería.
             </p>
           </Reveal>
         </div>
@@ -81,9 +80,9 @@ export default function NosotrosPage() {
       <section className="border-y border-white/10 bg-ink-800/40 py-12">
         <div className="container-x grid grid-cols-2 gap-8 sm:grid-cols-4">
           {[
+            { v: '10 años', l: 'Operando en el mercado' },
             { v: '6', l: 'Especialidades técnicas' },
-            { v: 'NOM · CFE', l: 'Cumplimiento normativo' },
-            { v: '24/7', l: 'Atención con SLA' },
+            { v: 'NOM-001-SEDE', l: 'Cumplimiento normativo' },
             { v: 'Nacional', l: 'Cobertura en México' },
           ].map((m) => (
             <Reveal key={m.l}>
@@ -132,14 +131,12 @@ export default function NosotrosPage() {
           <Reveal delay={100}>
             <div className="flex items-center gap-2 text-artel-green-400">
               <Users className="h-5 w-5" />
-              <span className="eyebrow !text-artel-green-400">Nuestro compromiso</span>
+              <span className="eyebrow !text-artel-green-400">A quién atendemos</span>
             </div>
             <h2 className="mt-4 text-3xl">Un aliado técnico, no un proveedor más</h2>
             <p className="mt-5 text-steel-300">
-              Acompañamos a directores de operaciones, gerentes de flota, administradores de
-              infraestructura y responsables de mantenimiento con soluciones diseñadas para su
-              contexto. Priorizamos la continuidad de tu operación, la seguridad eléctrica y la
-              transparencia en cada entrega.
+              Directores de operaciones, gerentes de flota, administradores de infraestructura y
+              responsables de mantenimiento: empresas que no pueden permitirse un paro no planeado.
             </p>
             <Link href="/contacto" className="btn btn-primary mt-8">
               Hablemos de tu proyecto <ArrowRight className="h-4 w-4" />

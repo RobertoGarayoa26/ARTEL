@@ -23,8 +23,7 @@ export default function ProyectosPage() {
               Proyectos que respaldan nuestra ingeniería
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-steel-300">
-              Una muestra de la infraestructura que ARTEL fabrica, instala y mantiene. Filtra por
-              línea de negocio.
+              10 años y más de 300 soluciones implementadas en todo el país.
             </p>
           </Reveal>
         </div>

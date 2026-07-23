@@ -148,7 +148,7 @@ export default function HomePage() {
           <Reveal>
             <span className="eyebrow">Propuesta de valor</span>
             <h2 className="mt-4 text-3xl md:text-4xl">
-              El “one-stop-shop” de tu infraestructura
+              Un solo proveedor para toda tu infraestructura
             </h2>
             <p className="mt-5 text-steel-300">
               En lugar de coordinar múltiples proveedores para energía, climatización, telecom y
