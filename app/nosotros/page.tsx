@@ -4,28 +4,38 @@ import Image from 'next/image';
 import {
   ArrowRight,
   ShieldCheck,
-  Factory,
+  Wrench,
+  Target,
+  Eye,
+  HeartHandshake,
   Clock4,
   MapPinned,
   Gauge,
   FileCheck2,
   Users,
+  Calendar,
+  Cable,
+  Sun,
+  Trophy,
+  Building2,
+  Thermometer,
 } from 'lucide-react';
+import { Counter } from '@/components/Counter';
 import { Reveal } from '@/components/Reveal';
 import { WaButton } from '@/components/WaButton';
 
 export const metadata: Metadata = {
   title: 'Nosotros · Capacidad técnica',
   description:
-    'ARTEL es un fabricante e integrador de ingeniería en infraestructura eléctrica, climatización, telecom y movilidad eléctrica. Cumplimiento NOM y CFE, cobertura nacional y contratos con SLA.',
+    'ARTEL es un fabricante e instalador de infraestructura eléctrica, climatización, telecom y movilidad eléctrica. Cumplimiento NOM y CFE, cobertura nacional y contratos con SLA.',
   alternates: { canonical: '/nosotros' },
 };
 
 const capabilities = [
   {
-    icon: Factory,
-    title: 'Fabricante, no solo instalador',
-    text: 'Diseñamos y fabricamos infraestructura como centros de carga en taller propio, con control de calidad de principio a fin.',
+    icon: Wrench,
+    title: 'Fabricante e instalador',
+    text: 'Diseñamos, fabricamos e instalamos infraestructura como centros de carga, con control de calidad de principio a fin.',
   },
   {
     icon: FileCheck2,
@@ -57,39 +67,42 @@ const capabilities = [
 export default function NosotrosPage() {
   return (
     <>
-      <section className="relative overflow-hidden pt-28 pb-16 md:pt-36">
+      <section className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-16 md:pt-36">
         <div className="absolute inset-0 -z-10">
-          <Image src="/media/subestaciones-2.webp" alt="" fill priority className="object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/78 to-ink" />
+          <Image src="/media/nosotros-oficinas.webp" alt="" fill priority className="object-cover opacity-40" />
+          <div className="absolute inset-0 bg-black/80" />
         </div>
-        <div className="container-x">
+        <div className="container-x w-full">
           <Reveal>
-            <span className="eyebrow">Nosotros</span>
-            <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-[1.08] sm:text-5xl">
-              Ingeniería e integración de infraestructura crítica
+            <span className="eyebrow !text-artel-green-400">Nosotros</span>
+            <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-[1.08] text-white sm:text-5xl">
+              ARTEL
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-steel-300">
-              10 años fabricando e integrando infraestructura eléctrica, climatización, telecom y
-              movilidad eléctrica. Un solo proveedor, un mismo estándar de ingeniería.
+            <p className="mt-6 max-w-2xl text-lg text-white/75">
+              En ARTEL ofrecemos servicios de ingeniería, fabricación, instalaciones, mantenimientos y consultoría de procesos, para optimizar tu negocio y aumentar la eficiencia y productividad; nuestro principal objetivo es hacer que nuestros servicios generen valor y mayor productividad para su organización.
             </p>
           </Reveal>
-        </div>
-      </section>
 
-      {/* Métricas */}
-      <section className="border-y border-white/10 bg-ink-800/40 py-12">
-        <div className="container-x grid grid-cols-2 gap-8 sm:grid-cols-4">
-          {[
-            { v: '10 años', l: 'Operando en el mercado' },
-            { v: '6', l: 'Especialidades técnicas' },
-            { v: 'NOM-001-SEDE', l: 'Cumplimiento normativo' },
-            { v: 'Nacional', l: 'Cobertura en México' },
-          ].map((m) => (
-            <Reveal key={m.l}>
-              <p className="font-display text-3xl text-white">{m.v}</p>
-              <p className="mt-1 text-sm text-steel-400">{m.l}</p>
-            </Reveal>
-          ))}
+          {/* Métricas */}
+          <Reveal delay={280}>
+            <div className="mt-14 grid grid-cols-2 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
+              {[
+                { icon: Calendar, v: 'Desde 2020', l: 'En el mercado' },
+                { icon: Trophy, v: '+100', l: 'Proyectos en nuestro portafolio' },
+                { icon: Building2, v: '+100', l: 'Clientes que confían en ARTEL' },
+              ].map((t) => (
+                <div key={t.l} className="flex items-start gap-3">
+                  <t.icon className="mt-0.5 h-5 w-5 text-artel-green-400" />
+                  <div>
+                    <p className="font-display text-lg text-white">
+                      <Counter value={t.v} />
+                    </p>
+                    <p className="text-xs text-white/60">{t.l}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -105,9 +118,9 @@ export default function NosotrosPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((c, i) => (
               <Reveal key={c.title} delay={i * 60}>
-                <div className="h-full rounded-2xl bg-ink-800 p-6 ring-1 ring-white/10">
+                <div className="h-full rounded-2xl bg-ink-800 p-6 ring-1 ring-black/10 shadow-sm">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-artel-green/15">
-                    <c.icon className="h-5 w-5 text-artel-green-400" />
+                    <c.icon className="h-5 w-5 text-artel-green-600" />
                   </div>
                   <h3 className="mt-4 text-lg">{c.title}</h3>
                   <p className="mt-2 text-sm text-steel-300">{c.text}</p>
@@ -118,25 +131,76 @@ export default function NosotrosPage() {
         </div>
       </section>
 
+      {/* Misión, Visión y Valores */}
+      <section className="border-t border-black/10 py-20">
+        <div className="container-x">
+          <Reveal>
+            <span className="eyebrow">Misión, visión y valores</span>
+            <h2 className="mt-4 max-w-2xl text-3xl md:text-4xl">Lo que nos guía</h2>
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <Reveal>
+              <div className="h-full rounded-2xl bg-ink-800 p-6 ring-1 ring-black/10 shadow-sm">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-artel-green/15">
+                  <Target className="h-5 w-5 text-artel-green-600" />
+                </div>
+                <h3 className="mt-4 text-lg">Misión</h3>
+                <p className="mt-2 text-sm text-steel-300">
+                  Mantener en operación continua la infraestructura de nuestros clientes, con
+                  ingeniería propia, cumplimiento normativo y tiempos de respuesta que protegen su
+                  operación.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={60}>
+              <div className="h-full rounded-2xl bg-ink-800 p-6 ring-1 ring-black/10 shadow-sm">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-artel-green/15">
+                  <Eye className="h-5 w-5 text-artel-green-600" />
+                </div>
+                <h3 className="mt-4 text-lg">Visión</h3>
+                <p className="mt-2 text-sm text-steel-300">
+                  Ser el proveedor de referencia en infraestructura en México, integrando cada
+                  especialidad bajo un solo punto de contacto y un compromiso de calidad
+                  constante.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="h-full rounded-2xl bg-ink-800 p-6 ring-1 ring-black/10 shadow-sm">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-artel-green/15">
+                  <HeartHandshake className="h-5 w-5 text-artel-green-600" />
+                </div>
+                <h3 className="mt-4 text-lg">Valores</h3>
+                <p className="mt-2 text-sm text-steel-300">
+                  Cumplimiento normativo, trazabilidad de cada servicio, tiempos de respuesta que
+                  respetamos y una relación de largo plazo con cada cliente.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* Enfoque cliente */}
-      <section className="border-t border-white/10 bg-ink-800/40 py-20">
+      <section className="border-t border-black/10 bg-ink-800/40 py-20">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10">
+            <div className="relative overflow-hidden rounded-2xl ring-1 ring-black/10">
               <div className="relative aspect-[4/3] w-full">
-                <Image src="/media/telecom-1.webp" alt="Mantenimiento en sitio ARTEL" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
+                <Image src="/media/nosotros-equipo.webp" alt="Equipo ARTEL en sitio" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
               </div>
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <div className="flex items-center gap-2 text-artel-green-400">
+            <div className="flex items-center gap-2 text-artel-green-600">
               <Users className="h-5 w-5" />
-              <span className="eyebrow !text-artel-green-400">A quién atendemos</span>
+              <span className="eyebrow">A quién atendemos</span>
             </div>
             <h2 className="mt-4 text-3xl">Un aliado técnico, no un proveedor más</h2>
             <p className="mt-5 text-steel-300">
-              Directores de operaciones, gerentes de flota, administradores de infraestructura y
-              responsables de mantenimiento: empresas que no pueden permitirse un paro no planeado.
+              Somos una extensión de tu operación, no un proveedor más. Trabajamos con directores
+              de operaciones, gerentes de flota, administradores de infraestructura y responsables
+              de mantenimiento: empresas que no pueden permitirse un paro no planeado.
             </p>
             <Link href="/contacto" className="btn btn-primary mt-8">
               Hablemos de tu proyecto <ArrowRight className="h-4 w-4" />
@@ -147,13 +211,13 @@ export default function NosotrosPage() {
 
       {/* CTA */}
       <section className="py-16">
-        <div className="container-x flex flex-col items-start justify-between gap-6 rounded-2xl bg-gradient-to-br from-artel-blue/20 to-artel-green/10 p-8 ring-1 ring-white/10 sm:flex-row sm:items-center">
+        <div className="container-x flex flex-col items-start justify-between gap-6 rounded-2xl bg-gradient-to-br from-artel-blue/10 to-artel-green/10 p-8 ring-1 ring-black/10 sm:flex-row sm:items-center">
           <h2 className="max-w-lg text-2xl">
             ¿Listo para integrar tu infraestructura con un solo aliado?
           </h2>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/contacto" className="btn btn-primary">Cotizar</Link>
-            <WaButton location="nosotros_cta" message="Hola ARTEL, quiero conocer más sobre su capacidad técnica." className="btn btn-secondary">
+            <WaButton location="nosotros_cta" message="Hola ARTEL, quiero conocer más sobre su capacidad técnica." className="btn btn-whatsapp">
               WhatsApp
             </WaButton>
           </div>

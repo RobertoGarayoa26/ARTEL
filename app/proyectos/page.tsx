@@ -23,7 +23,7 @@ export default function ProyectosPage() {
               Proyectos que respaldan nuestra ingeniería
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-steel-300">
-              10 años y más de 300 soluciones implementadas en todo el país.
+              Desde 2020, más de 10,000 mantenimientos y 50,000 instalaciones de fibra óptica en todo el país.
             </p>
           </Reveal>
         </div>
@@ -35,8 +35,8 @@ export default function ProyectosPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 py-16">
-        <div className="container-x flex flex-col items-start justify-between gap-6 rounded-2xl bg-ink-800 p-8 ring-1 ring-white/10 sm:flex-row sm:items-center">
+      <section className="border-t border-black/10 py-16">
+        <div className="container-x flex flex-col items-start justify-between gap-6 rounded-2xl bg-ink-800 p-8 ring-1 ring-black/10 shadow-sm sm:flex-row sm:items-center">
           <div>
             <h2 className="text-2xl">¿Tienes un proyecto similar?</h2>
             <p className="mt-2 text-steel-300">Cuéntanos el alcance y te preparamos una propuesta.</p>
@@ -48,7 +48,7 @@ export default function ProyectosPage() {
             <WaButton
               location="proyectos_cta"
               message="Hola ARTEL, vi sus proyectos y quiero cotizar uno similar."
-              className="btn btn-secondary"
+              className="btn btn-whatsapp"
             >
               WhatsApp
             </WaButton>

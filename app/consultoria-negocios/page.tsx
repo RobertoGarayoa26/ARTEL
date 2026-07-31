@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getService } from '@/lib/services';
 import { ServiceLanding } from '@/components/ServiceLanding';
 
-const service = getService('telecom-gabinetes')!;
+const service = getService('consultoria-negocios')!;
 
 export const metadata: Metadata = {
   title: service.metaTitle,

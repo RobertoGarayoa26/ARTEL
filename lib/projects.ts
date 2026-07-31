@@ -4,7 +4,7 @@
 //  category debe ser uno de: 'Micromovilidad' | 'Telecom' | 'HVAC' | 'Energía'
 // ============================================================
 
-export type ProjectCategory = 'Micromovilidad' | 'Telecom' | 'HVAC' | 'Energía';
+export type ProjectCategory = 'Micromovilidad' | 'Telecom' | 'HVAC' | 'Energía' | 'Fibra Óptica' | 'Consultoría';
 
 export type Project = {
   title: string;
@@ -20,25 +20,27 @@ export const projectCategories: ProjectCategory[] = [
   'Telecom',
   'HVAC',
   'Energía',
+  'Fibra Óptica',
+  'Consultoría',
 ];
 
 export const projects: Project[] = [
   {
-    title: 'Centro de carga para flota de última milla',
+    title: 'Centro de carga para flota de e-bikes',
     category: 'Micromovilidad',
     image: '/media/micromovilidad-3.webp',
     location: 'Culiacán',
     summary:
-      'Fabricación e instalación de un centro de carga a la medida con bahías dedicadas y protecciones eléctricas para una flota de e-bikes.',
+      'fabricación, instalación y mantenimiento de centros de carga para flotas de vehiculos eléctricos.',
     tags: ['Fabricación', 'Diseño eléctrico', 'NOM-001'],
   },
   {
-    title: 'Mantenimiento a gabinetes de radiobases',
+    title: 'Mantenimiento a gabinetes de transmisión',
     category: 'Telecom',
     image: '/media/telecom-1.webp',
     location: 'Nacional',
     summary:
-      'Rutina preventiva sobre planta de fuerza DC, banco de baterías y climatización del gabinete con reporte de parámetros.',
+      'Programa de mantenimiento preventivo a gabinetes de transmisión para una empresa de telecomunicaciones.',
     tags: ['Planta DC', 'Baterías', 'SLA'],
   },
   {
@@ -51,12 +53,12 @@ export const projects: Project[] = [
     tags: ['Preventivo', 'Multimarca'],
   },
   {
-    title: 'Servicio a sistema de climatización comercial',
+    title: 'Servicio a sistema HVAC comercial',
     category: 'HVAC',
     image: '/media/hvac-2.webp',
     location: 'Estado de México',
     summary:
-      'Servicio de mantenimiento a climatización a plaza comercial para reducir consumo eléctrico.',
+      'Servicio de mantenimiento preventivo de aire acondicionado para plazas comerciales para reducir consumo eléctrico.',
     tags: ['Eficiencia', 'Correctivo'],
   },
   {
@@ -69,30 +71,30 @@ export const projects: Project[] = [
     tags: ['Fotovoltaico', 'Ahorro'],
   },
   {
-    title: 'Instalación de cargador EV con adecuación eléctrica',
+    title: 'Instalación de cargadores para EV',
     category: 'Energía',
     image: '/media/ev-1.webp',
     location: 'Monterrey',
     summary:
-      'Instalación de cargador EV con la adecuación de infraestructura eléctrica necesaria.',
+      'Instalación de cargadores para autos eléctricos, gestionando con CFE la adecuación eléctrica necesaria.',
     tags: ['EV', 'Electromovilidad'],
   },
   {
-    title: 'Mantenimiento a subestación eléctrica',
+    title: 'Mantenimiento a planta de fuerza eléctrica',
     category: 'Energía',
-    image: '/media/subestaciones-1.webp',
+    image: '/media/solar-4.webp',
     location: 'Instalación industrial',
     summary:
-      'Mantenimiento preventivo a subestación para asegurar la continuidad del suministro eléctrico.',
-    tags: ['Subestación', 'CFE / NOM'],
+      'Mantenimiento preventivo y correctivo a planta de fuerza en el metro de la Ciudad de México.',
+    tags: ['Alta tensión', 'Planta de fuerza', 'CFE / NOM'],
   },
   {
-    title: 'Revisión de equipo de media tensión',
+    title: 'Revisión de equipo de media tensión y planta de fuerza',
     category: 'Energía',
     image: '/media/subestaciones-2.webp',
     location: 'Instalación industrial',
     summary:
-      'Inspección y correctivo de componentes de media tensión con enfoque en seguridad.',
-    tags: ['Media tensión', 'Seguridad'],
+      'Inspección y correctivo de componentes de media tensión y planta de fuerza con enfoque en seguridad.',
+    tags: ['Media tensión', 'Planta de fuerza', 'Seguridad'],
   },
 ];

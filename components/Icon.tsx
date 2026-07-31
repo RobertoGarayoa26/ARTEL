@@ -3,6 +3,7 @@ import {
   RadioTower,
   Wind,
   SunMedium,
+  Lightbulb,
   type LucideProps,
 } from 'lucide-react';
 
@@ -11,6 +12,7 @@ const map = {
   antenna: RadioTower,
   wind: Wind,
   solar: SunMedium,
+  consulting: Lightbulb,
 };
 
 export type IconKey = keyof typeof map;

@@ -9,18 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Identidad ARTEL
+        // Identidad ARTEL — superficies claras (tema light)
         ink: {
-          DEFAULT: '#0B0E14', // fondo casi negro azulado
-          900: '#0B0E14',
-          800: '#11151F',
-          700: '#161C29',
-          600: '#1E2636',
+          DEFAULT: '#FFFFFF', // fondo de página
+          900: '#FFFFFF',
+          800: '#F6F7F9', // tarjetas / superficie ligeramente marcada
+          700: '#F0F2F5', // bandas alternas de sección
+          600: '#E4E8EE', // superficie más marcada / hover
+        },
+        // Reservado para las franjas hero con foto (scrim oscuro intencional)
+        noir: {
+          DEFAULT: '#0B0E14',
         },
         steel: {
-          400: '#8A94A6',
-          300: '#AEB6C4',
-          200: '#CBD2DD',
+          200: '#12161F', // texto primario / énfasis (casi negro)
+          300: '#4B5565', // texto secundario
+          400: '#6B7280', // etiquetas / texto terciario
+          500: '#94A0B2', // texto más tenue (disclaimers, captions)
         },
         artel: {
           green: '#1F9E57', // verde del logo (AR)

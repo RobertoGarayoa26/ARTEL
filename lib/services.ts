@@ -44,20 +44,22 @@ export type Service = {
 /* ---- MICROMOVILIDAD ---- */
 export const services: Service[] = [
   {
-    slug: 'micromovilidad-centros-de-carga',
+    slug: 'micromovilidad',
     interestKey: 'Micromovilidad / Centros de carga',
     icon: 'battery',
     shortName: 'Centros de carga',
     cardTitle: 'Micromovilidad · Centros de carga',
     cardText:
-      'Fabricación e instalación de centros y estaciones de carga a la medida para flotas de e-bikes, scooters y motos eléctricas.',
-    eyebrow: 'Fabricación de Infraestructura para micromovilidad',
-    title: 'Centros de carga para flotas de micromovilidad',
+      'Fabricación e instalación de centros de carga a la medida para flotas de e-bikes, scooters y motos eléctricas.',
+    eyebrow: 'Centros de carga para flotas de micromovilidad',
+    title: 'Fabricación e instalación de infraestructura para micromovilidad',
     heroSubtitle:
-      'Garantizamos la seguridad, eficiencia y escalabilidad de tu flota. Diseñamos y fabricamos infraestructura de carga a la medida de tu operación. Capacidad comprobada bajo estándares normativos.',
+      'Garantizamos la seguridad, eficiencia y escalabilidad de tu flota. Diseñamos, fabricamos e instalamos infraestructura de carga baterías a la medida.',
     heroImage: '/media/micromovilidad-3.webp',
+    heroPoster: '/media/micromovilidad-poster.webp',
+    heroVideo: '/media/video/micromovilidad.mp4',
     accent: 'green',
-    metaTitle: 'Centros y estaciones de carga para flotas de micromovilidad | ARTEL',
+    metaTitle: 'Centros de carga para flotas de micromovilidad | ARTEL',
     metaDescription:
       'Fabricación e instalación de centros de carga a la medida para flotas de e-bikes, scooters y motos eléctricas. Diseño eléctrico y protecciones certificadas. Cotiza con ARTEL.',
     keywords: [
@@ -118,18 +120,18 @@ export const services: Service[] = [
     gallery: [
       '/media/micromovilidad-1.webp',
       '/media/micromovilidad-2.webp',
-      '/media/micromovilidad-3.webp',
+      '/media/micromovilidad-6.webp',
     ],
     fichas: [
       {
-        title: 'Centro de carga ARTEL — Ficha técnica general',
-        file: '/fichas/artel-centro-de-carga-ficha-tecnica.pdf',
+        title: 'FleetCharge X80 — Ficha técnica',
+        file: '/fichas/artel-fleetcharge-x80-ficha-tecnica.pdf',
         specs: [
-          { k: 'Configuración', v: 'Modular, 4–100+ bahías' },
-          { k: 'Alimentación', v: '127/220 V · 1F/3F según demanda' },
-          { k: 'Protecciones', v: 'Termomagnética + diferencial por circuito' },
-          { k: 'Compatibilidad', v: 'E-bikes, scooters, motos eléctricas' },
-          { k: 'Normativa', v: 'NOM-001-SEDE-2012' },
+          { k: 'Material', v: 'Lámina de aluminio o CRS' },
+          { k: 'Alto', v: '1.850 m' },
+          { k: 'Hermeticidad', v: 'No' },
+          { k: 'Garantía', v: '1 año en componentes eléctricos · 5 años en estructura y pintura' },
+          { k: 'Normativa', v: 'NOM-001-SEDE' },
         ],
       },
     ],
@@ -153,29 +155,32 @@ export const services: Service[] = [
 
   /* ---- TELECOM ---- */
   {
-    slug: 'telecom-gabinetes',
-    interestKey: 'Telecom / Gabinetes de radiobases',
+    slug: 'telecom',
+    interestKey: 'Telecom / Gabinetes de radiobases / Fibra Óptica',
     icon: 'antenna',
     shortName: 'Telecom',
-    cardTitle: 'Telecom · Gabinetes de radiobases',
+    cardTitle: 'Telecom · Gabinetes de transmisión · Fibra óptica',
     cardText:
-      'Mantenimiento integral a gabinetes de radiobases: plantas de fuerza DC, banco de baterías y climatización en sitio.',
-    eyebrow: 'Mantenimiento de Infraestructura de Telecomunicaciones',
-    title: 'Mantenimiento integral a gabinetes de radiobases',
+      'Instalación y mantenimiento de gabinetes de transmisión, fibra óptica y cableado estructurado.',
+    eyebrow: 'Instalación y mantenimiento de infraestructura de telecomunicaciones',
+    title: 'Instalación y mantenimiento de gabinetes de transmisión, fibra óptica y cableado estructurado.',
     heroSubtitle:
-      'Ayudamos a empresas mexicanas de telecomunicaciones a mantener sus gabinetes de radiobases en funcionamiento, sin comprometer la continuidad de su red. 10 años de experiencia nos respaldan como proveedor de mantenimiento.',
+      'Ayudamos a empresas de telecomunicaciones a mantener sus gabinetes de transmisión en funcionamiento, instalar líneas de fibra óptica y cableado estructurado a nivel nacional.',
     heroImage: '/media/telecom-1.webp',
     heroPoster: '/media/telecom-poster.webp',
     heroVideo: '/media/video/telecom.mp4',
     accent: 'blue',
-    metaTitle: 'Mantenimiento a gabinetes de radiobases y sitios telecom | ARTEL',
+    metaTitle: 'Instalación y mantenimiento a gabinetes de radiobases y transmisión | ARTEL',
     metaDescription:
-      'Mantenimiento preventivo y correctivo a gabinetes de radiobases: planta de fuerza DC, baterías y climatización en sitio. Cobertura nacional con SLA. Cotiza con ARTEL.',
+      'Instalación y mantenimiento preventivo y correctivo a gabinetes de radiobases y transmisión: planta de fuerza DC, baterías, climatización, fibra óptica y cableado estructurado. Cotiza con ARTEL.',
     keywords: [
       'mantenimiento gabinetes radiobases',
+      'mantenimiento gabinetes de transmisión',
       'plantas de fuerza DC telecom',
       'mantenimiento bancos de baterías',
       'climatización sitios telecom',
+      'instalación de fibra óptica',
+      'cableado estructurado',
       'mantenimiento infraestructura telecomunicaciones',
     ],
     buyer: 'Administradores de Infraestructura de Telecomunicaciones, Directores de Operaciones y Gerentes de Mantenimiento de Sitios.',
@@ -199,6 +204,18 @@ export const services: Service[] = [
         text: 'Mantenimiento a equipos de aire de precisión y confort que mantienen la temperatura del gabinete.',
       },
       {
+        title: 'Instalaciones y mantenimiento de fibra óptica',
+        text: 'Tendido, empalme, certificación y mantenimiento de enlaces de fibra óptica para la conectividad de tu sitio. Más de 50,000 instalaciones ejecutadas a nivel nacional.',
+      },
+      {
+        title: 'Instalaciones de cableado estructurado',
+        text: 'Diseño, tendido y certificación de cableado estructurado para redes de datos y telecomunicaciones en sitio.',
+      },
+      {
+        title: 'Gabinetes de transmisión',
+        text: 'Mantenimiento preventivo y correctivo a gabinetes de transmisión, con el mismo estándar que aplicamos en radiobases.',
+      },
+      {
         title: 'Programas con SLA a la medida',
         text: 'Diseñamos niveles de servicio y tiempos de respuesta según la criticidad de cada sitio, con guardias disponibles para atención fuera de horario.',
       },
@@ -218,15 +235,21 @@ export const services: Service[] = [
       'Mantenimiento preventivo y correctivo de planta de fuerza DC',
       'Diagnóstico y reemplazo de bancos de baterías',
       'Climatización de precisión y confort en gabinete',
-      'Atención con SLA y guardias 24/7',
+      'Mantenimiento preventivo y correctivo a gabinetes de transmisión',
+      'Instalación y mantenimiento de fibra óptica',
+      'Instalación de cableado estructurado',
       'Reportes con evidencia por sitio',
     ],
     stats: [
-      { value: '+300', label: 'Sitios atendidos' },
-      { value: 'Cobertura Nacional', label: 'Servicio en todo el país' },
-      { value: '+12,000', label: 'Servicios atendidos' },
+      { value: '+50,000', label: 'Instalaciones de fibra óptica' },
+      { value: '+10,000', label: 'Mantenimientos ejecutados' },
+      { value: '+7,000', label: 'Sitios visitados' },
     ],
-    gallery: ['/media/telecom-1.webp', '/media/telecom-2.webp'],
+    gallery: [
+      '/media/telecom-gabinetes-4.webp',
+      '/media/telecom-fo-1.webp',
+      '/media/telecom-fo-3.webp',
+    ],
     faq: [
       {
         q: '¿Atienden contratos con SLA por número de sitios?',
@@ -244,25 +267,33 @@ export const services: Service[] = [
         q: '¿Entregan evidencia del servicio?',
         a: 'Cada visita se documenta con parámetros medidos, fotografías y recomendaciones por sitio.',
       },
+      {
+        q: '¿Instalan fibra óptica y cableado estructurado además del mantenimiento de gabinetes?',
+        a: 'Sí. Hemos ejecutado más de 50,000 instalaciones de fibra óptica en sitios de telecomunicaciones a nivel nacional, y también instalamos cableado estructurado para redes de datos.',
+      },
+      {
+        q: '¿También dan mantenimiento a gabinetes de transmisión?',
+        a: 'Sí, damos mantenimiento preventivo y correctivo a gabinetes de transmisión con el mismo estándar que aplicamos en radiobases.',
+      },
     ],
     waMessage:
-      'Hola ARTEL, me interesa cotizar mantenimiento a gabinetes de radiobases (planta DC, baterías y climatización).',
+      'Hola ARTEL, me interesa cotizar instalación y mantenimiento a gabinetes de radiobases/transmisión, fibra óptica o cableado estructurado.',
   },
 
   /* ---- HVAC ---- */
   {
-    slug: 'hvac-industrial',
-    interestKey: 'HVAC industrial',
+    slug: 'aires-hvac',
+    interestKey: 'HVAC industrial y comercial',
     icon: 'wind',
     shortName: 'HVAC',
-    cardTitle: 'HVAC industrial',
+    cardTitle: 'HVAC industrial y comercial',
     cardText:
-      'Mantenimiento preventivo y correctivo a sistemas de aire acondicionado comercial e industrial.',
-    eyebrow: 'Mantenimiento de Infraestructura HVAC',
-    title: 'Mantenimiento a aire acondicionado industrial y comercial',
+      'Mantenimiento preventivo y correctivo a sistemas de aire acondicionado industriales y comerciales.',
+    eyebrow: 'Mantenimiento de infraestructura HVAC',
+    title: 'Mantenimiento preventivo y correctivo a aire acondicionado industrial y comercial',
     heroSubtitle:
-      'Apoyamos a las empresas mexicanas en el mantenimiento de aire acondicionado industrial y comercial. Nuestros 10 años de experiencia y cientos de clientes satisfechos avalan la calidad de nuestro trabajo.',
-    heroImage: '/media/hvac-1.webp',
+      'Realizamos servicios de mantenimiento de aire acondicionado a centros de atención a clientes, parques industriales y plazas comerciales, reduciendo consumos de energía y costos de operación.',
+    heroImage: '/media/hvac-4.webp',
     heroPoster: '/media/hvac-poster.webp',
     heroVideo: '/media/video/hvac.mp4',
     accent: 'blue',
@@ -320,11 +351,11 @@ export const services: Service[] = [
       'Optimización de consumo energético',
     ],
     stats: [
-      { value: 'Amplia experiencia', label: 'Experiencia en equipos multimarcas' },
+      { value: 'Desde 2020', label: 'Años de experiencia' },
       { value: 'Cobertura nacional', label: 'Presencia en todo el país' },
-      { value: '+5,000', label: 'Servicios atendidos' },
+      { value: '+5,000 ton', label: 'Toneladas ejecutadas' },
     ],
-    gallery: ['/media/hvac-1.webp', '/media/hvac-2.webp'],
+    gallery: ['/media/hvac-6.webp', '/media/hvac-4.webp', '/media/hvac-gallery-2.webp'],
     faq: [
       {
         q: '¿Atienden distintas marcas de equipos?',
@@ -350,26 +381,26 @@ export const services: Service[] = [
   /* ---- ENERGY ---- */
   {
     slug: 'energia-solar-ev',
-    interestKey: 'Energía solar / Subestaciones / Cargadores EV',
+    interestKey: 'Energía solar / Plantas de fuerza / Cargadores EV',
     icon: 'solar',
     shortName: 'Energía solar y EV',
-    cardTitle: 'Energía solar · Subestaciones · EV',
+    cardTitle: 'Energía solar · Plantas de fuerza · EV',
     cardText:
-      'Paneles solares, mantenimiento a subestaciones eléctricas y estaciones de carga para autos eléctricos.',
+      'Paneles solares, mantenimiento a plantas de fuerza, subestaciones y estaciones de carga para autos eléctricos.',
     eyebrow: 'Energía e infraestructura eléctrica',
-    title: 'Energía solar, subestaciones y carga de vehículos eléctricos',
+    title: 'Paneles solares, plantas de fuerza, subestaciones y cargadores EV',
     heroSubtitle:
-      'Con 8 años de experiencia, hemos implementado más de 300 soluciones de paneles solares y banco de baterías en sitios de telecomunicaciones a nivel nacional. Hoy aplicamos esa misma ingeniería eléctrica para instalar estaciones de carga para vehículos eléctricos, preparando tu operación para la electromovilidad.',
-    heroImage: '/media/solar-1.webp',
+      'Cambiarte y mantener la energía limpia en tu hogar, oficina o centro de distribución, ahora es más fácil con ARTEL. Recupera tu inversión en menos de 3 años y seguirás ahorrando para siempre.',
+    heroImage: '/media/solar-4.webp',
     heroPoster: '/media/solar-poster.webp',
     heroVideo: '/media/video/solar.mp4',
     accent: 'green',
-    metaTitle: 'Paneles solares, subestaciones y cargadores EV | ARTEL',
+    metaTitle: 'Paneles solares, plantas de fuerza y cargadores EV | ARTEL',
     metaDescription:
-      'Instalación de paneles solares, mantenimiento a subestaciones y estaciones de carga EV. Ingeniería conforme a NOM-001-SEDE y CFE. Cotiza con ARTEL.',
+      'Instalación de paneles solares, mantenimiento a plantas de fuerza y estaciones de carga EV. Ingeniería conforme a NOM-001-SEDE y CFE. Cotiza con ARTEL.',
     keywords: [
       'instalación de paneles solares industrial',
-      'mantenimiento subestaciones eléctricas',
+      'mantenimiento plantas de fuerza eléctricas',
       'estaciones de carga para autos eléctricos',
       'cargadores EV México',
       'infraestructura eléctrica CFE',
@@ -377,7 +408,7 @@ export const services: Service[] = [
     buyer: 'Administradores de Infraestructura Eléctrica, Directores de Operaciones y Administradores de Parques Industriales y Comerciales.',
     pains: [
       'Costo de energía eléctrica cada vez más alto, que reduce el margen de tu operación mes a mes.',
-      'Subestaciones y sitios remotos sin mantenimiento documentado: riesgo de falla, paro total y observaciones en auditorías eléctricas.',
+      'Plantas de fuerza y sitios remotos sin mantenimiento documentado: riesgo de falla, paro total y observaciones en auditorías eléctricas.',
       'Quedarte atrás frente a la demanda de carga para vehículos eléctricos, sin un proveedor con experiencia comprobada en infraestructura eléctrica para instalarla con seguridad.',
       'Proyectos eléctricos rechazados o retrasados por incumplimiento ante CFE o la norma NOM-001-SEDE.',
     ],
@@ -388,24 +419,24 @@ export const services: Service[] = [
       },
       {
         title: 'Paneles solares y banco de baterías',
-        text: 'Diseño e instalación de sistemas fotovoltaicos con respaldo de batería. Hemos implementado más de 300 de estas soluciones en sitios de telecomunicaciones a nivel nacional.',
+        text: 'Diseño e instalación de sistemas fotovoltaicos con respaldo de batería. Hemos instalado más de 10,000 kilowatts en sitios de telecomunicaciones a nivel nacional.',
       },
       {
-        title: 'Subestaciones eléctricas',
+        title: 'Plantas de fuerza eléctricas',
         text: 'Mantenimiento preventivo y correctivo documentado, que respalda tus auditorías y asegura la continuidad de tu suministro.',
       },
       {
         title: 'Estaciones de carga EV',
-        text: 'Instalación de cargadores para autos eléctricos con la misma ingeniería eléctrica que respalda 10 años de proyectos de energía en ARTEL.',
+        text: 'Instalación de cargadores para autos eléctricos con la misma ingeniería eléctrica que respalda nuestros proyectos de energía desde 2020.',
       },
       {
         title: 'Cumplimiento normativo',
         text: 'Ingeniería y ejecución conforme a la NOM-001-SEDE y los requerimientos de interconexión de CFE, para evitar rechazos o retrasos en tu proyecto.',
       },
     ],
-    scopeLabel: 'Alcance (kW de generación / cargadores EV / capacidad de subestación)',
+    scopeLabel: 'Alcance (kW de generación; capacidad de planta de fuerza; cargadores EV)',
     process: [
-      { step: '01', title: 'Estudio y diagnóstico', text: 'Análisis de consumo, sitio y objetivos.' },
+      { step: '01', title: 'Levantamiento y diagnóstico', text: 'Análisis de consumo, sitio y objetivos.' },
       { step: '02', title: 'Ingeniería', text: 'Diseño eléctrico y memoria de cálculo.' },
       { step: '03', title: 'Ejecución', text: 'Instalación y cumplimiento normativo.' },
       { step: '04', title: 'Operación y mantenimiento', text: 'Puesta en marcha y mantenimiento continuo.' },
@@ -413,20 +444,19 @@ export const services: Service[] = [
     capabilities: [
       'Sistemas fotovoltaicos comerciales e industriales',
       'Soluciones de banco de baterías con carga solar para sitios remotos',
-      'Mantenimiento preventivo y correctivo a subestaciones',
+      'Mantenimiento preventivo y correctivo a plantas de fuerza',
       'Estaciones de carga para autos eléctricos (EV)',
       'Ingeniería eléctrica conforme a NOM-001-SEDE y requerimientos de CFE',
     ],
     stats: [
-      { value: '8 años', label: 'Experiencia en energía e infraestructura eléctrica' },
-      { value: '+300', label: 'Sitios con solución solar y banco de baterías implementada' },
-      { value: 'NOM-001-SEDE', label: 'Cumplimiento normativo' },
+      { value: 'Menos de 3 años', label: 'Recuperación de tu inversión' },
+      { value: '+90%', label: 'Reducción en tu recibo de luz' },
+      { value: '30 años', label: 'Garantía ARTEL' },
     ],
     gallery: [
-      '/media/solar-1.webp',
-      '/media/subestaciones-1.webp',
-      '/media/ev-1.webp',
-      '/media/solar-2.webp',
+      '/media/solar-4.webp',
+      '/media/solar-5.webp',
+      '/media/hev-2-solar.webp',
     ],
     faq: [
       {
@@ -439,11 +469,106 @@ export const services: Service[] = [
       },
       {
         q: '¿Tienen experiencia instalando cargadores para autos eléctricos?',
-        a: 'Es nuestra línea más reciente, pero aplicamos la misma ingeniería eléctrica y cumplimiento normativo que respalda 10 años y más de 300 soluciones de energía en ARTEL.',
+        a: 'Es nuestra línea más reciente, pero aplicamos la misma ingeniería eléctrica y cumplimiento normativo que respalda más de 10,000 kilowatts instalados en proyectos de energía desde 2020.',
       },
     ],
     waMessage:
-      'Hola ARTEL, me interesa cotizar energía solar / mantenimiento de subestación / cargadores EV.',
+      'Hola ARTEL, me interesa cotizar energía solar; mantenimiento de planta de fuerza; cargadores EV.',
+  },
+
+  /* ---- CONSULTORÍA ---- */
+  {
+    slug: 'consultoria-negocios',
+    interestKey: 'Consultoría de negocios',
+    icon: 'consulting',
+    shortName: 'Consultoría',
+    cardTitle: 'Consultoría de negocios',
+    cardText:
+      'Consultoría de procesos, ingeniería, operación, digitalización y optimización',
+    eyebrow: 'Consultoría de Negocios',
+    title: 'Consultoría de procesos, ingeniería y operación para optimizar tu negocio',
+    heroSubtitle:
+      'Optimiza tus procesos operativos y administrativos a través de rediseño, la digitalización e integración tecnológica. En ARTEL conectamos la estrategia con la operación, mejorando la eficiencia y la productividad.',
+    heroImage: '/media/consultoria-2.webp',
+    heroPoster: '/media/consultoria-poster.webp',
+    heroVideo: '/media/video/consultoria.mp4',
+    accent: 'blue',
+    metaTitle: 'Consultoría empresarial | ARTEL',
+    metaDescription:
+      'Consultoría en ingeniería eléctrica, desarrollo de proyectos eléctricos y automatización de procesos industriales, conforme a NOM. Cotiza con ARTEL.',
+    keywords: [
+      'consultoría eléctrica industrial',
+      'desarrollo de proyectos eléctricos',
+      'automatización de procesos industriales',
+      'ingeniería eléctrica México',
+      'estudios de factibilidad eléctrica',
+    ],
+    buyer:
+      'Directores de Operaciones, Gerentes de Ingeniería y Administradores de Infraestructura.',
+    pains: [
+      'Proyectos eléctricos que arrancan sin un estudio de factibilidad, con sobrecostos y retrabajos.',
+      'Procesos manuales que limitan la capacidad de tu operación y aumentan el margen de error.',
+      'Decisiones de inversión en infraestructura eléctrica sin respaldo de ingeniería documentada.',
+      'Proyectos detenidos por falta de memoria de cálculo o cumplimiento normativo ante CFE.',
+    ],
+    solutions: [
+      {
+        title: 'Estudios de factibilidad',
+        text: 'Evaluamos viabilidad técnica y normativa antes de que tu proyecto arranque.',
+      },
+      {
+        title: 'Consultoría procesos',
+        text: 'Diagnóstico y recomendaciones sobre tu infraestructura actual.',
+      },
+      {
+        title: 'Desarrollo de proyectos de infraestructura',
+        text: 'Ingeniería de detalle, memoria de cálculo y planos para proyectos nuevos o ampliaciones.',
+      },
+      {
+        title: 'Automatización de procesos',
+        text: 'Análisis y diseño de automatización para procesos industriales, reduciendo intervención manual y margen de error.',
+      },
+    ],
+    scopeLabel: 'Alcance del proyecto (estudio, ingeniería de detalle, automatización)',
+    process: [
+      { step: '01', title: 'Diagnóstico inicial', text: 'Levantamiento de información y objetivos del proyecto.' },
+      { step: '02', title: 'Estudio y propuesta', text: 'Análisis técnico y propuesta de solución.' },
+      { step: '03', title: 'Ingeniería de detalle', text: 'Memoria de cálculo, planos y especificaciones.' },
+      { step: '04', title: 'Acompañamiento', text: 'Seguimiento durante ejecución y cumplimiento normativo.' },
+    ],
+    capabilities: [
+      'Estudios de factibilidad técnica y normativa',
+      'Consultoría en ingeniería de procesos industriales y comerciales',
+      'Desarrollo de proyectos de infraestructura',
+      'Automatización y control de procesos',
+    ],
+    stats: [
+      { value: '+5 años', label: 'Expertos en consultoría de procesos' },
+      { value: '+100', label: 'Clientes que confían en ARTEL' },
+    ],
+    gallery: [
+      '/media/consultoria-1.webp',
+    ],
+    faq: [
+      {
+        q: '¿Qué incluye la consultoría de negocios?',
+        a: 'Diagnóstico de tus procesos e infraestructura actual, recomendaciones técnicas y, si se requiere, desarrollo de ingeniería de detalle para tu proyecto.',
+      },
+      {
+        q: '¿Hacen el proyecto ejecutivo completo?',
+        a: 'Sí, desarrollamos ingeniería de detalle, memoria de cálculo y planos listos para ejecución.',
+      },
+      {
+        q: '¿También ejecutan el proyecto o solo consultoría?',
+        a: 'Podemos acompañarte solo en la etapa de consultoría, o continuar con la instalación y mantenimiento a través de nuestras otras líneas de negocio.',
+      },
+      {
+        q: '¿Trabajan automatización de procesos?',
+        a: 'Sí, analizamos y diseñamos soluciones de automatización para procesos industriales que buscan reducir la intervención manual.',
+      },
+    ],
+    waMessage:
+      'Hola ARTEL, me interesa cotizar consultoría de negocios / desarrollo de proyecto / automatización de procesos.',
   },
 ];
 

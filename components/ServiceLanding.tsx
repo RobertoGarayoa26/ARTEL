@@ -10,13 +10,14 @@ import { FichaDownload } from '@/components/FichaDownload';
 import { site } from '@/lib/site';
 
 export function ServiceLanding({ service: s }: { service: Service }) {
-  const accentText = s.accent === 'green' ? 'text-artel-green-400' : 'text-artel-blue-400';
+  const accentText = s.accent === 'green' ? 'text-artel-green-600' : 'text-artel-blue-600';
+  const accentTextHero = s.accent === 'green' ? 'text-artel-green-400' : 'text-artel-blue-400';
   const accentBg = s.accent === 'green' ? 'bg-artel-green/15' : 'bg-artel-blue/20';
 
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-16 md:pt-20">
+      <section className="relative flex min-h-screen items-center overflow-hidden pt-16 md:pt-20">
         <div className="absolute inset-0 -z-10">
           {s.heroVideo ? (
             <video
@@ -32,29 +33,29 @@ export function ServiceLanding({ service: s }: { service: Service }) {
           ) : (
             <Image src={s.heroImage} alt="" fill priority className="object-cover opacity-45" />
           )}
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/75 to-ink" />
+          <div className="absolute inset-0 bg-black/80" />
         </div>
 
-        <div className="container-x py-20 md:py-28">
+        <div className="container-x w-full py-20 md:py-28">
           <Reveal>
-            <nav className="mb-6 text-sm text-steel-400">
+            <nav className="mb-6 text-sm text-white/60">
               <Link href="/" className="hover:text-white">Inicio</Link>
               <span className="mx-2">/</span>
-              <span className="text-steel-200">{s.shortName}</span>
+              <span className="text-white">{s.shortName}</span>
             </nav>
             <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl ${accentBg}`}>
-              <ServiceIcon name={s.icon} className={`h-6 w-6 ${accentText}`} />
+              <ServiceIcon name={s.icon} className={`h-6 w-6 ${accentTextHero}`} />
             </div>
-            <span className="eyebrow">{s.eyebrow}</span>
-            <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-[1.08] sm:text-5xl">
+            <span className="eyebrow !text-artel-green-400">{s.eyebrow}</span>
+            <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-[1.08] text-white sm:text-5xl">
               {s.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-steel-300">{s.heroSubtitle}</p>
+            <p className="mt-6 max-w-2xl text-lg text-white/75">{s.heroSubtitle}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="#cotizar" className="btn btn-primary text-base">
                 Cotizar esta línea <ArrowRight className="h-4 w-4" />
               </Link>
-              <WaButton location={`landing_${s.slug}_hero`} message={s.waMessage} className="btn btn-secondary text-base">
+              <WaButton location={`landing_${s.slug}_hero`} message={s.waMessage} className="btn btn-whatsapp text-base">
                 WhatsApp directo
               </WaButton>
             </div>
@@ -65,7 +66,7 @@ export function ServiceLanding({ service: s }: { service: Service }) {
               {s.stats.map((st) => (
                 <div key={st.label}>
                   <p className="font-display text-2xl text-white">{st.value}</p>
-                  <p className="text-sm text-steel-400">{st.label}</p>
+                  <p className="text-sm text-white/60">{st.label}</p>
                 </div>
               ))}
             </div>
@@ -82,8 +83,8 @@ export function ServiceLanding({ service: s }: { service: Service }) {
             <p className="mt-3 text-sm text-steel-400">Dirigido a: {s.buyer}</p>
             <ul className="mt-6 space-y-3">
               {s.pains.map((p) => (
-                <li key={p} className="flex items-start gap-3 rounded-xl bg-ink-800 p-4 text-sm text-steel-200 ring-1 ring-white/5">
-                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-400/80" />
+                <li key={p} className="flex items-start gap-3 rounded-xl bg-ink-800 p-4 text-sm text-steel-200 ring-1 ring-black/5">
+                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
                   {p}
                 </li>
               ))}
@@ -95,8 +96,8 @@ export function ServiceLanding({ service: s }: { service: Service }) {
             <h2 className="mt-4 text-2xl md:text-3xl">Cómo lo hacemos</h2>
             <div className="mt-6 grid gap-4">
               {s.solutions.map((sol) => (
-                <div key={sol.title} className="rounded-xl bg-ink-800 p-5 ring-1 ring-white/5">
-                  <h3 className="text-base text-white">{sol.title}</h3>
+                <div key={sol.title} className="rounded-xl bg-ink-800 p-5 ring-1 ring-black/5">
+                  <h3 className="text-base text-steel-200">{sol.title}</h3>
                   <p className="mt-1.5 text-sm text-steel-300">{sol.text}</p>
                 </div>
               ))}
@@ -106,7 +107,7 @@ export function ServiceLanding({ service: s }: { service: Service }) {
       </section>
 
       {/* PROCESO */}
-      <section className="border-y border-white/10 bg-ink-800/40 py-20">
+      <section className="border-y border-black/10 bg-ink-800/40 py-20">
         <div className="container-x">
           <Reveal>
             <span className="eyebrow">Cómo trabajamos</span>
@@ -115,7 +116,7 @@ export function ServiceLanding({ service: s }: { service: Service }) {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {s.process.map((p, i) => (
               <Reveal key={p.step} delay={i * 70}>
-                <div className="relative rounded-2xl bg-ink p-6 ring-1 ring-white/10">
+                <div className="relative rounded-2xl bg-ink p-6 ring-1 ring-black/10 shadow-sm">
                   <span className={`font-display text-3xl ${accentText}`}>{p.step}</span>
                   <h3 className="mt-3 text-base">{p.title}</h3>
                   <p className="mt-1.5 text-sm text-steel-400">{p.text}</p>
@@ -143,32 +144,39 @@ export function ServiceLanding({ service: s }: { service: Service }) {
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="grid grid-cols-2 gap-3">
-              {s.gallery.slice(0, 4).map((g, i) => (
-                <div
-                  key={g}
-                  className={`relative overflow-hidden rounded-xl ring-1 ring-white/10 ${
-                    s.slug === 'telecom-gabinetes'
-                      ? 'col-span-2 h-52'
-                      : s.slug === 'energia-solar-ev' &&
-                          (g === '/media/solar-1.webp' || g === '/media/solar-2.webp')
-                        ? 'col-span-2 h-52'
-                        : i === 0
-                          ? 'col-span-2 h-52'
-                          : 'h-36'
-                  }`}
-                >
-                  <Image src={g} alt={s.shortName} fill sizes="(max-width:1024px) 50vw, 25vw" className="object-cover" />
+            {s.gallery.length === 1 ? (
+              <div className="relative mx-auto max-w-[360px] overflow-hidden rounded-2xl ring-1 ring-black/10 sm:max-w-[360px]">
+                <div className="relative aspect-[1/1] w-full">
+                  <Image
+                    src={s.gallery[0]}
+                    alt={s.shortName}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
                 </div>
-              ))}
-            </div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-3">
+                {s.gallery.slice(0, 4).map((g, i) => (
+                  <div
+                    key={g}
+                    className={`relative overflow-hidden rounded-xl ring-1 ring-black/10 ${
+                      i === 0 ? 'col-span-2 h-52' : 'h-36'
+                    }`}
+                  >
+                    <Image src={g} alt={s.shortName} fill sizes="(max-width:1024px) 50vw, 25vw" className="object-cover" />
+                  </div>
+                ))}
+              </div>
+            )}
           </Reveal>
         </div>
       </section>
 
       {/* FICHAS TÉCNICAS */}
       {s.fichas && s.fichas.length > 0 && (
-        <section className="border-t border-white/10 bg-ink-800/40 py-16">
+        <section className="border-t border-black/10 bg-ink-800/40 py-16">
           <div className="container-x">
             <Reveal>
               <span className="eyebrow">Recursos técnicos</span>
@@ -195,12 +203,12 @@ export function ServiceLanding({ service: s }: { service: Service }) {
             <span className="eyebrow">Preguntas frecuentes</span>
             <h2 className="mt-4 text-2xl md:text-3xl">Dudas comunes</h2>
           </Reveal>
-          <div className="mt-8 divide-y divide-white/10">
+          <div className="mt-8 divide-y divide-black/10">
             {s.faq.map((f) => (
               <details key={f.q} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-white">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-steel-200">
                   <span className="font-medium">{f.q}</span>
-                  <span className="text-artel-green-400 transition-transform group-open:rotate-45">+</span>
+                  <span className="text-artel-green-600 transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-3 text-sm text-steel-300">{f.a}</p>
               </details>
@@ -210,7 +218,7 @@ export function ServiceLanding({ service: s }: { service: Service }) {
       </section>
 
       {/* CTA + FORM */}
-      <section id="cotizar" className="section-fade border-t border-white/10 py-20">
+      <section id="cotizar" className="section-fade border-t border-black/10 py-20">
         <div className="container-x grid gap-12 lg:grid-cols-2">
           <Reveal>
             <span className="eyebrow">Cotización en 3 pasos</span>
@@ -220,7 +228,7 @@ export function ServiceLanding({ service: s }: { service: Service }) {
               Sin compromiso.
             </p>
             <div className="mt-8">
-              <WaButton location={`landing_${s.slug}_form`} message={s.waMessage} className="btn btn-secondary">
+              <WaButton location={`landing_${s.slug}_form`} message={s.waMessage} className="btn btn-whatsapp">
                 Prefiero WhatsApp
               </WaButton>
             </div>

@@ -7,7 +7,7 @@ import { track } from '@/lib/track';
 export function WaButton({
   message,
   location,
-  className = 'btn btn-secondary',
+  className = 'btn btn-whatsapp',
   children = 'WhatsApp directo',
 }: {
   message?: string;

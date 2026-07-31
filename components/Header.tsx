@@ -9,38 +9,24 @@ import { track } from '@/lib/track';
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [linesOpen, setLinesOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all ${
-        scrolled ? 'bg-ink/90 backdrop-blur-md ring-1 ring-white/5' : 'bg-transparent'
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur-md ring-1 ring-black/5">
       <div className="container-x flex h-16 items-center justify-between md:h-20">
         <Link href="/" className="flex items-center gap-2" aria-label="ARTEL — Inicio">
-          <span className="rounded-md bg-white px-2 py-1.5">
-            <Image
-              src="/media/logo-artel.png"
-              alt="ARTEL"
-              width={92}
-              height={28}
-              priority
-              className="h-8 w-auto"
-            />
-          </span>
+          <Image
+            src="/media/logo-artel.png"
+            alt="ARTEL"
+            width={111}
+            height={28}
+            priority
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Nav escritorio */}
@@ -53,18 +39,18 @@ export function Header() {
                 onMouseEnter={() => setLinesOpen(true)}
                 onMouseLeave={() => setLinesOpen(false)}
               >
-                <button className="flex items-center gap-1 text-sm font-medium text-steel-200 hover:text-white">
+                <button className="flex items-center gap-1 text-sm font-medium text-steel-300 transition-colors hover:text-steel-200">
                   {item.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
                 {linesOpen && (
                   <div className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3">
-                    <div className="card overflow-hidden p-2 shadow-2xl shadow-black/40">
+                    <div className="card overflow-hidden p-2 shadow-2xl shadow-black/10">
                       {item.children.map((c) => (
                         <Link
                           key={c.href}
                           href={c.href}
-                          className="block rounded-lg px-3 py-2.5 text-sm text-steel-200 hover:bg-white/5 hover:text-white"
+                          className="block rounded-lg px-3 py-2.5 text-sm text-steel-300 hover:bg-black/5 hover:text-steel-200"
                         >
                           {c.label}
                         </Link>
@@ -77,7 +63,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-steel-200 hover:text-white"
+                className="text-sm font-medium text-steel-300 transition-colors hover:text-steel-200"
               >
                 {item.label}
               </Link>
@@ -91,7 +77,7 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track('whatsapp_click', { location: 'header' })}
-            className="btn btn-secondary"
+            className="btn btn-whatsapp"
           >
             WhatsApp
           </a>
@@ -102,7 +88,7 @@ export function Header() {
 
         {/* Botón móvil */}
         <button
-          className="md:hidden text-white"
+          className="text-steel-200 transition-colors md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Abrir menú"
         >
@@ -113,7 +99,7 @@ export function Header() {
       {/* Menú móvil */}
       {open && (
         <div className="md:hidden">
-          <div className="container-x border-t border-white/10 bg-ink pb-6 pt-2">
+          <div className="container-x border-t border-black/10 bg-white pb-6 pt-2">
             {nav.map((item) =>
               item.children ? (
                 <div key={item.label} className="py-2">
@@ -125,7 +111,7 @@ export function Header() {
                       key={c.href}
                       href={c.href}
                       onClick={() => setOpen(false)}
-                      className="block rounded-lg px-1 py-2.5 text-[15px] text-steel-200 hover:text-white"
+                      className="block rounded-lg px-1 py-2.5 text-[15px] text-steel-300 hover:text-steel-200"
                     >
                       {c.label}
                     </Link>
@@ -136,7 +122,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-1 py-3 text-[15px] font-medium text-white"
+                  className="block rounded-lg px-1 py-3 text-[15px] font-medium text-steel-200"
                 >
                   {item.label}
                 </Link>
@@ -148,7 +134,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track('whatsapp_click', { location: 'mobile_menu' })}
-                className="btn btn-secondary w-full"
+                className="btn btn-whatsapp w-full"
               >
                 WhatsApp directo
               </a>

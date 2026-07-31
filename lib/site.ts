@@ -6,12 +6,12 @@
 
 export const site = {
   name: 'ARTEL',
-  legalName: 'ARTEL — Ingeniería en Infraestructura',
+  legalName: 'ARTEL — Consultoría, Ingeniería, Fabricación, Mantenimiento e Instalaciones',
   // URL canónica (usada para SEO/Open Graph). Cambia si tu dominio final difiere.
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.cr-artel.com',
-  tagline: 'Ingeniería e infraestructura crítica, integradas en un solo aliado.',
+  tagline: 'Ingeniería e infraestructura, integradas en un solo aliado.',
   description:
-    'ARTEL fabrica e integra infraestructura eléctrica, climatización, telecomunicaciones y movilidad eléctrica para operaciones industriales y comerciales en México. Un solo proveedor para energía, HVAC, telecom y carga de vehículos.',
+    'ARTEL mantiene infraestructura eléctrica, climatización, telecomunicaciones y movilidad eléctrica para operaciones industriales y comerciales en México. Un solo proveedor para energía, HVAC, telecom, consultoría y carga de vehículos.',
 
   // ---- CONTACTO (PLACEHOLDER — reemplazar por datos reales) ----
   contact: {
@@ -20,17 +20,17 @@ export const site = {
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '5215580308420',
     phoneDisplay: '+52 55 8030 8420', // PLACEHOLDER
     phoneHref: '+525580308420', // PLACEHOLDER
-    // Dirección PLACEHOLDER — usada en el mapa y en el schema LocalBusiness.
+    // Dirección real — usada en el mapa y en el schema LocalBusiness.
     address: {
-      street: 'Eje 3 Norte, San Isidro 680',
-      city: 'Ciudad de México',
-      state: 'CDMX',
-      zip: '06500',
+      street: 'C. Ópalo 78, Hab. Miraflores',
+      city: 'Tlalnepantla de Baz',
+      state: 'Méx.',
+      zip: '54160',
       country: 'MX',
     },
-    // Coordenadas PLACEHOLDER (CDMX). Reemplaza por las de tu sede.
-    geo: { lat: 19.485913, lng: -99.212966 },
-    hours: 'Lun–Vie 8:00–18:00 · Guardias 24/7 para contratos con SLA',
+    // Coordenadas APROXIMADAS de Tlalnepantla de Baz — ajusta si tienes las exactas de la sede.
+    geo: { lat: 19.529246, lng: -99.180666 },
+    hours: 'Lun–Vie 8:00–18:00',
     coverage: 'Cobertura nacional en México',
   },
 
@@ -52,10 +52,11 @@ export const nav = [
     label: 'Líneas de negocio',
     href: '#',
     children: [
-      { label: 'Micromovilidad · Centros de carga', href: '/micromovilidad-centros-de-carga' },
-      { label: 'Telecom · Gabinetes de radiobases', href: '/telecom-gabinetes' },
-      { label: 'HVAC industrial', href: '/hvac-industrial' },
-      { label: 'Energía solar · Subestaciones · EV', href: '/energia-solar-ev' },
+      { label: 'Consultoría de negocios', href: '/consultoria-negocios' },
+      { label: 'Telecom · Gabinetes · Fibra óptica', href: '/telecom' },
+      { label: 'Micromovilidad · Centros de carga', href: '/micromovilidad' },
+      { label: 'HVAC · Industrial · Comercial', href: '/aires-hvac' },
+      { label: 'Energía solar · Plantas de fuerza · EV', href: '/energia-solar-ev' },
     ],
   },
   { label: 'Nosotros', href: '/nosotros' },

@@ -63,7 +63,7 @@ export function StepForm({ defaultInterest, compact }: Props) {
     return (
       <div className="card p-8 text-center">
         <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-artel-green/15">
-          <Check className="h-7 w-7 text-artel-green-400" />
+          <Check className="h-7 w-7 text-artel-green-600" />
         </div>
         <h3 className="text-xl">¡Solicitud enviada!</h3>
         <p className="mt-2 text-sm text-steel-300">
@@ -85,14 +85,14 @@ export function StepForm({ defaultInterest, compact }: Props) {
                 i < step
                   ? 'bg-artel-green text-white'
                   : i === step
-                  ? 'bg-artel-green/20 text-artel-green-400 ring-2 ring-artel-green'
-                  : 'bg-white/5 text-steel-400'
+                  ? 'bg-artel-green/15 text-artel-green-600 ring-2 ring-artel-green'
+                  : 'bg-black/5 text-steel-400'
               }`}
             >
               {i < step ? <Check className="h-4 w-4" /> : i + 1}
             </div>
             {i < STEPS.length - 1 && (
-              <div className={`h-0.5 flex-1 rounded ${i < step ? 'bg-artel-green' : 'bg-white/10'}`} />
+              <div className={`h-0.5 flex-1 rounded ${i < step ? 'bg-artel-green' : 'bg-black/10'}`} />
             )}
           </div>
         ))}
@@ -114,8 +114,8 @@ export function StepForm({ defaultInterest, compact }: Props) {
               }}
               className={`flex items-center justify-between rounded-xl border px-4 py-3.5 text-left text-sm transition-all ${
                 data.interest === opt
-                  ? 'border-artel-green bg-artel-green/10 text-white'
-                  : 'border-white/10 bg-white/[0.02] text-steel-200 hover:border-white/25'
+                  ? 'border-artel-green bg-artel-green/10 text-steel-200'
+                  : 'border-black/10 bg-black/[0.02] text-steel-200 hover:border-black/20'
               }`}
             >
               <span>{opt}</span>
@@ -173,7 +173,7 @@ export function StepForm({ defaultInterest, compact }: Props) {
             onChange={(v) => set('location', v)}
           />
           {status === 'error' && (
-            <p className="sm:col-span-2 text-sm text-red-400">
+            <p className="sm:col-span-2 text-sm text-red-600">
               No se pudo enviar. Escríbenos por WhatsApp o inténtalo de nuevo.
             </p>
           )}
@@ -224,11 +224,11 @@ export function StepForm({ defaultInterest, compact }: Props) {
         :global(.input) {
           width: 100%;
           border-radius: 0.6rem;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(0, 0, 0, 0.12);
+          background: rgba(0, 0, 0, 0.015);
           padding: 0.7rem 0.85rem;
           font-size: 0.9rem;
-          color: white;
+          color: #12161f;
           outline: none;
           transition: border-color 0.15s;
         }

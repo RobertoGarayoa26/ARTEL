@@ -64,14 +64,16 @@ export default function ContactoPage() {
           <div className="lg:col-span-2">
             <Reveal>
               <div className="space-y-4">
-                <ContactRow icon={Mail} label="Correo" value={contact.email} href={`mailto:${contact.email}`} />
-                <ContactRow icon={Phone} label="Teléfono" value={contact.phoneDisplay} href={`tel:${contact.phoneHref}`} />
+                <div className="divide-y divide-black/10 overflow-hidden rounded-2xl bg-ink-800 ring-1 ring-black/10 shadow-sm">
+                  <ContactSubRow icon={Mail} label="Correo" value={contact.email} href={`mailto:${contact.email}`} />
+                  <ContactSubRow icon={Phone} label="Teléfono" value={contact.phoneDisplay} href={`tel:${contact.phoneHref}`} />
+                </div>
                 <ContactRow icon={MapPin} label="Dirección" value={`${contact.address.street}, ${contact.address.city}, ${contact.address.state}`} />
                 <ContactRow icon={Clock} label="Horario" value={contact.hours} />
               </div>
 
               <div className="mt-6 rounded-2xl bg-artel-green/10 p-5 ring-1 ring-artel-green/20">
-                <div className="flex items-center gap-2 text-artel-green-400">
+                <div className="flex items-center gap-2 text-artel-green-600">
                   <MessageCircle className="h-5 w-5" />
                   <span className="font-semibold">Respuesta inmediata</span>
                 </div>
@@ -81,14 +83,14 @@ export default function ContactoPage() {
                 <WaButton
                   location="contacto_page"
                   message="Hola ARTEL, quiero solicitar una cotización."
-                  className="btn btn-primary mt-4 w-full"
+                  className="btn btn-whatsapp mt-4 w-full"
                 >
                   Abrir WhatsApp
                 </WaButton>
               </div>
 
               {/* Mapa */}
-              <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-white/10">
+              <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-black/10">
                 <iframe
                   title="Ubicación ARTEL"
                   src={mapSrc}
@@ -132,13 +134,40 @@ function ContactRow({
   href?: string;
 }) {
   const inner = (
-    <div className="flex items-start gap-4 rounded-2xl bg-ink-800 p-5 ring-1 ring-white/10 transition-colors hover:ring-white/20">
+    <div className="flex items-start gap-4 rounded-2xl bg-ink-800 p-5 ring-1 ring-black/10 shadow-sm transition-colors hover:ring-black/20">
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-artel-green/15">
-        <Icon className="h-5 w-5 text-artel-green-400" />
+        <Icon className="h-5 w-5 text-artel-green-600" />
       </div>
       <div>
         <p className="text-xs uppercase tracking-wider text-steel-400">{label}</p>
-        <p className="mt-0.5 text-white">{value}</p>
+        <p className="mt-0.5 text-steel-200">{value}</p>
+      </div>
+    </div>
+  );
+  return href ? <a href={href}>{inner}</a> : inner;
+}
+
+// Igual que ContactRow, pero sin ring/rounded/shadow propios: se usa dentro de un
+// contenedor que ya agrupa varias filas (ej. correo + teléfono sin espacio entre sí).
+function ContactSubRow({
+  icon: Icon,
+  label,
+  value,
+  href,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: string;
+  href?: string;
+}) {
+  const inner = (
+    <div className="flex items-start gap-4 p-5 transition-colors hover:bg-black/5">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-artel-green/15">
+        <Icon className="h-5 w-5 text-artel-green-600" />
+      </div>
+      <div>
+        <p className="text-xs uppercase tracking-wider text-steel-400">{label}</p>
+        <p className="mt-0.5 text-steel-200">{value}</p>
       </div>
     </div>
   );

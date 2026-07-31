@@ -49,10 +49,10 @@ export function FichaDownload({ ficha, interest }: { ficha: Ficha; interest: str
     <div className="card p-5">
       <div className="flex items-start gap-4">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-artel-blue/20">
-          <FileText className="h-6 w-6 text-artel-blue-400" />
+          <FileText className="h-6 w-6 text-artel-blue-600" />
         </div>
         <div className="min-w-0 flex-1">
-          <h4 className="text-base text-white">{ficha.title}</h4>
+          <h4 className="text-base text-steel-200">{ficha.title}</h4>
           <ul className="mt-2 grid gap-1 text-xs text-steel-400 sm:grid-cols-2">
             {ficha.specs.map((s) => (
               <li key={s.k}>
@@ -102,7 +102,7 @@ export function FichaDownload({ ficha, interest }: { ficha: Ficha; interest: str
           )}
 
           {status === 'done' && (
-            <p className="mt-4 inline-flex items-center gap-2 text-sm text-artel-green-400">
+            <p className="mt-4 inline-flex items-center gap-2 text-sm text-artel-green-600">
               <Check className="h-4 w-4" /> Descarga iniciada. ¡Gracias!
             </p>
           )}
@@ -112,11 +112,11 @@ export function FichaDownload({ ficha, interest }: { ficha: Ficha; interest: str
       <style jsx>{`
         :global(.ficha-input) {
           border-radius: 0.55rem;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(0, 0, 0, 0.12);
+          background: rgba(0, 0, 0, 0.015);
           padding: 0.6rem 0.75rem;
           font-size: 0.85rem;
-          color: white;
+          color: #12161f;
           outline: none;
         }
         :global(.ficha-input:focus) {

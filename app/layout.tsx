@@ -9,7 +9,7 @@ import { site } from '@/lib/site';
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} · ${site.tagline}`,
+    default: 'ARTEL - Ingeniería e Infraestructura',
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -25,18 +25,22 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: site.name }],
   alternates: { canonical: '/' },
+  icons: {
+    icon: [{ url: '/icon.png', type: 'image/png' }, { url: '/favicon.ico' }],
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'es_MX',
     url: site.url,
     siteName: site.name,
-    title: `${site.name} · ${site.tagline}`,
+    title: 'ARTEL - Ingeniería e Infraestructura',
     description: site.description,
     images: [{ url: '/media/og-default.jpg', width: 1200, height: 630, alt: 'ARTEL' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${site.name} · ${site.tagline}`,
+    title: 'ARTEL - Ingeniería e Infraestructura',
     description: site.description,
     images: ['/media/og-default.jpg'],
   },
