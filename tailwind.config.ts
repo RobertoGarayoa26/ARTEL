@@ -35,6 +35,7 @@ const config: Config = {
           'blue-600': '#123B82',
           'blue-400': '#3E7BD6',
           cyan: '#31D9B4',
+          electric: '#2B6EFF', // azul eléctrico — acento de máximo impacto
         },
       },
       fontFamily: {
@@ -62,6 +63,10 @@ const config: Config = {
       backgroundImage: {
         'grid-faint':
           'linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px)',
+        // Degradado de marca (azul → cian). El verde queda reservado para WhatsApp.
+        'brand-gradient': 'linear-gradient(135deg, #1C50A8 0%, #2E8FD9 55%, #31D9B4 100%)',
+        // Cian multi-tono (estilo blexxon) para elementos de máximo impacto.
+        'cyan-gradient': 'linear-gradient(135deg, #5EEAD4 0%, #31D9B4 45%, #0EA5B8 100%)',
       },
     },
   },

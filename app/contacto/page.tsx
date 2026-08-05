@@ -83,7 +83,7 @@ export default function ContactoPage() {
                 <WaButton
                   location="contacto_page"
                   message="Hola ARTEL, quiero solicitar una cotización."
-                  className="btn btn-whatsapp mt-4 w-full"
+                  className="btn-pill-whatsapp mt-4 w-full"
                 >
                   Abrir WhatsApp
                 </WaButton>
@@ -135,8 +135,8 @@ function ContactRow({
 }) {
   const inner = (
     <div className="flex items-start gap-4 rounded-2xl bg-ink-800 p-5 ring-1 ring-black/10 shadow-sm transition-colors hover:ring-black/20">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-artel-green/15">
-        <Icon className="h-5 w-5 text-artel-green-600" />
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-artel-blue/10">
+        <Icon className="h-5 w-5 text-artel-blue-600" />
       </div>
       <div>
         <p className="text-xs uppercase tracking-wider text-steel-400">{label}</p>
@@ -162,8 +162,8 @@ function ContactSubRow({
 }) {
   const inner = (
     <div className="flex items-start gap-4 p-5 transition-colors hover:bg-black/5">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-artel-green/15">
-        <Icon className="h-5 w-5 text-artel-green-600" />
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-artel-blue/10">
+        <Icon className="h-5 w-5 text-artel-blue-600" />
       </div>
       <div>
         <p className="text-xs uppercase tracking-wider text-steel-400">{label}</p>

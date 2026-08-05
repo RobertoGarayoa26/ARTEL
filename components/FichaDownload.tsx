@@ -48,7 +48,7 @@ export function FichaDownload({ ficha, interest }: { ficha: Ficha; interest: str
   return (
     <div className="card p-5">
       <div className="flex items-start gap-4">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-artel-blue/20">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-artel-blue/10">
           <FileText className="h-6 w-6 text-artel-blue-600" />
         </div>
         <div className="min-w-0 flex-1">
@@ -62,7 +62,7 @@ export function FichaDownload({ ficha, interest }: { ficha: Ficha; interest: str
           </ul>
 
           {!open && status !== 'done' && (
-            <button onClick={() => setOpen(true)} className="btn btn-primary mt-4">
+            <button onClick={() => setOpen(true)} className="btn-accent mt-4">
               <Download className="h-4 w-4" /> Descargar ficha (PDF)
             </button>
           )}
@@ -86,7 +86,7 @@ export function FichaDownload({ ficha, interest }: { ficha: Ficha; interest: str
               <button
                 type="submit"
                 disabled={!emailValid || status === 'sending'}
-                className="btn btn-primary sm:col-span-2 disabled:opacity-40"
+                className="btn-accent sm:col-span-2 disabled:opacity-40"
               >
                 {status === 'sending' ? (
                   <>
@@ -120,7 +120,7 @@ export function FichaDownload({ ficha, interest }: { ficha: Ficha; interest: str
           outline: none;
         }
         :global(.ficha-input:focus) {
-          border-color: #1f9e57;
+          border-color: #31d9b4;
         }
         :global(.ficha-input::placeholder) {
           color: #6b7280;

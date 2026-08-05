@@ -34,33 +34,30 @@ export default function HomePage() {
       {/* ================= HERO ================= */}
       <section className="relative flex min-h-screen items-center overflow-hidden pt-16 md:pt-20">
         <div className="absolute inset-0 -z-10">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="h-full w-full object-cover opacity-45"
-          >
-            <source src="/media/video/inicio.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-black/80" />
+          <Image
+            src="/media/hero-inicio.webp"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
 
         <div className="container-x w-full py-20 md:py-28">
           <Reveal>
-            <span className="eyebrow">
-              <CircuitBoard className="h-4 w-4" /> Consultoría · Ingeniería · Fabricación · Mantenimiento · Instalaciones
+            <span className="inline-flex items-center gap-2.5 text-sm font-bold uppercase tracking-[0.16em] text-white">
+              <CircuitBoard className="h-4 w-4 shrink-0 text-artel-cyan" /> Consultoría · Ingeniería · Fabricación · Mantenimiento · Instalaciones
             </span>
           </Reveal>
           <Reveal delay={80}>
             <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl md:text-6xl">
-              Un solo aliado para tu <span className="text-artel-green-400">infraestructura</span>
+              Un solo aliado para tu <span className="text-accent">infraestructura</span>
             </h1>
           </Reveal>
           <Reveal delay={140}>
-            <p className="mt-6 max-w-2xl text-lg text-white/75">
-              ARTEL mantiene tu infraestructura eléctrica, climatización, telecomunicaciones y
-              movilidad eléctrica, con una alta disponibilidad para tus clientes y operaciones.
+            <p className="mt-6 max-w-2xl text-lg text-white">
+              ARTEL mantiene tu infraestructura de telecomunicaciones, climatización, eléctrica, y micromovilidad con una alta disponibilidad para tus operaciones.
             </p>
           </Reveal>
           <Reveal delay={170}>
@@ -69,8 +66,8 @@ export default function HomePage() {
                 'Ingeniería de alto nivel, cumplimiento normativo y tiempos de respuesta que protegen tu operación.',
                 'Integramos soluciones de distintas especialidades para atender tus necesidades.',
               ].map((p) => (
-                <li key={p} className="flex items-start gap-3 text-sm text-white/75">
-                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-artel-green-400" />
+                <li key={p} className="flex items-start gap-3 text-sm text-white">
+                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-artel-cyan" />
                   {p}
                 </li>
               ))}
@@ -78,42 +75,48 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={200}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contacto" className="btn btn-primary text-base">
+              <Link href="/contacto" className="btn-accent">
                 Cotizar mi proyecto <ArrowRight className="h-4 w-4" />
               </Link>
               <WaButton
                 location="hero"
                 message="Hola ARTEL, me interesa cotizar un proyecto de infraestructura."
-                className="btn btn-whatsapp text-base"
+                className="btn-pill-whatsapp"
               >
-                WhatsApp directo
+                Hablar por WhatsApp
               </WaButton>
             </div>
           </Reveal>
+        </div>
+      </section>
 
-          {/* Cifras clave */}
-          <Reveal delay={280}>
-            <div className="mt-14 grid grid-cols-2 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
-              {[
-                { icon: Calendar, v: 'Desde 2020', l: 'En el mercado' },
-                { icon: Cable, v: '+50,000', l: 'Instalaciones de fibra óptica' },
-                { icon: Wrench, v: '+10,000', l: 'Mantenimientos ejecutados' },
-                { icon: Sun, v: '+10,000 kW', l: 'Instalados en paneles solares' },
-                { icon: MapPinned, v: '+7,000', l: 'Sitios visitados' },
-                { icon: Thermometer, v: '+5,000 ton', l: 'Ejecutadas en HVAC' },
-              ].map((t) => (
-                <div key={t.l} className="flex items-start gap-3">
-                  <t.icon className="mt-0.5 h-5 w-5 text-artel-green-400" />
+      {/* ================= CIFRAS CLAVE ================= */}
+      <section className="bg-noir py-16">
+        <div className="container-x">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: Calendar, v: 'Desde 2020', l: 'En el mercado' },
+              { icon: Cable, v: '+50,000', l: 'Instalaciones de fibra óptica' },
+              { icon: Wrench, v: '+10,000', l: 'Mantenimientos ejecutados' },
+              { icon: Sun, v: '+10,000 kW', l: 'Instalados en paneles solares' },
+              { icon: MapPinned, v: '+7,000', l: 'Sitios visitados' },
+              { icon: Thermometer, v: '+5,000 ton', l: 'Ejecutadas en HVAC' },
+            ].map((t, i) => (
+              <Reveal key={t.l} delay={i * 60}>
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-inset ring-white/15">
+                    <t.icon className="h-6 w-6 text-artel-cyan" />
+                  </div>
                   <div>
-                    <p className="font-display text-lg text-white">
+                    <p className="text-accent font-display text-3xl font-extrabold leading-none tabular-nums sm:text-4xl">
                       <Counter value={t.v} />
                     </p>
-                    <p className="text-xs text-white/60">{t.l}</p>
+                    <p className="mt-1.5 text-sm text-white/60">{t.l}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </Reveal>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -121,46 +124,33 @@ export default function HomePage() {
       <section className="section-fade py-20 md:py-28">
         <div className="container-x">
           <Reveal>
-            <span className="eyebrow"><Wrench className="h-4 w-4" /> Líneas de negocio</span>
             <h2 className="mt-4 max-w-2xl text-3xl md:text-4xl">
-              Cinco líneas de ingeniería, un mismo estándar
+              Especialidades ARTEL
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (
               <Reveal key={s.slug} delay={i * 70}>
                 <Link
                   href={`/${s.slug}`}
-                  className="group relative block overflow-hidden rounded-2xl ring-1 ring-black/10"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl bg-noir ring-1 ring-white/10 transition-shadow duration-300 hover:shadow-2xl hover:shadow-artel-cyan/10"
                 >
-                  <div className="relative h-56 w-full">
+                  <div className="relative h-72 w-full shrink-0 overflow-hidden">
                     <Image
                       src={s.heroImage}
                       alt={s.cardTitle}
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/70 to-transparent" />
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 p-6">
-                    <div
-                      className={`mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl ${
-                        s.accent === 'green' ? 'bg-artel-green/20' : 'bg-artel-blue/25'
-                      }`}
-                    >
-                      <ServiceIcon
-                        name={s.icon}
-                        className={`h-5 w-5 ${
-                          s.accent === 'green' ? 'text-artel-green-400' : 'text-artel-blue-400'
-                        }`}
-                      />
-                    </div>
-                    <h3 className="text-xl text-white">{s.cardTitle}</h3>
-                    <p className="mt-2 max-w-md text-sm text-white/75">{s.cardText}</p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-artel-green-400">
-                      Ver línea <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <div className="flex h-56 flex-col p-6">
+                    <ServiceIcon name={s.icon} className="h-6 w-6 text-artel-cyan" />
+                    <h3 className="mt-4 text-lg text-white">{s.cardTitle}</h3>
+                    <p className="mt-2 line-clamp-3 flex-1 text-sm text-white/60">{s.cardText}</p>
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-artel-cyan">
+                      Ver más... <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
                 </Link>
@@ -171,7 +161,8 @@ export default function HomePage() {
       </section>
 
       {/* ================= ONE-STOP-SHOP ================= */}
-      <section className="border-y border-black/10 bg-ink-800/50 py-20">
+      <section className="relative overflow-hidden border-y border-black/10 bg-ink-800/50 py-20">
+        <div className="glow-blob left-1/2 top-0 h-72 w-72 -translate-x-1/2 -translate-y-1/2 bg-artel-cyan/20" />
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <span className="eyebrow">Propuesta de valor</span>
@@ -183,26 +174,28 @@ export default function HomePage() {
               carga eléctrica, ARTEL integra todo bajo un mismo estándar de ingeniería, un solo
               contrato y un solo punto de contacto. Menos proveedores, menos riesgo, más control.
             </p>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-6 space-y-4">
               {[
-                'Ingeniería y fabricación propia, no solo instalación de terceros.',
-                'Cumplimiento normativo NOM y ante CFE.',
-                'Contratos de mantenimiento con SLA y evidencia.',
+                'Ingeniería, instalaciones y fabricación propias.',
+                'Cumplimiento normativo en todos nuestros servicios.',
+                'Contratos de mantenimiento que generan valor.',
                 'Un solo interlocutor para todas tus líneas.',
               ].map((p) => (
-                <li key={p} className="flex items-start gap-3 text-sm text-steel-200">
-                  <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-artel-green-600" />
+                <li key={p} className="flex items-center gap-3.5 text-sm text-steel-200">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-artel-cyan">
+                    <ShieldCheck className="h-4 w-4 text-noir" />
+                  </span>
                   {p}
                 </li>
               ))}
             </ul>
-            <Link href="/nosotros" className="btn btn-secondary mt-8">
+            <Link href="/nosotros" className="btn-accent mt-8">
               Conocer nuestra capacidad técnica <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="relative overflow-hidden rounded-2xl ring-1 ring-black/10">
+            <div className="relative overflow-hidden rounded-3xl shadow-xl shadow-artel-cyan/10 ring-1 ring-black/10">
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   src="/media/propuesta-valor-1.webp"
@@ -222,33 +215,32 @@ export default function HomePage() {
         <div className="container-x">
           <div className="flex items-end justify-between gap-4">
             <Reveal>
-              <span className="eyebrow">Prueba social</span>
-              <h2 className="mt-4 text-3xl md:text-4xl">Proyectos ejecutados</h2>
+              <h2 className="text-3xl md:text-4xl">Soluciones implementadas</h2>
             </Reveal>
-            <Link href="/proyectos" className="hidden shrink-0 text-sm font-semibold text-artel-green-600 hover:underline sm:inline-flex sm:items-center sm:gap-1.5">
+            <Link href="/proyectos" className="hidden shrink-0 text-sm font-semibold text-artel-blue-600 hover:underline sm:inline-flex sm:items-center sm:gap-1.5">
               Ver todos <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.slice(0, 6).map((p, i) => (
               <Reveal key={p.title} delay={i * 60}>
-                <div className="group overflow-hidden rounded-2xl ring-1 ring-black/10">
-                  <div className="relative h-48 w-full overflow-hidden">
+                <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-noir ring-1 ring-white/10 transition-shadow duration-300 hover:shadow-2xl hover:shadow-artel-cyan/10">
+                  <div className="relative h-72 w-full shrink-0 overflow-hidden">
                     <Image
                       src={p.image}
                       alt={p.title}
                       fill
-                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <span className="absolute left-3 top-3 rounded-full bg-noir/80 px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/15">
                       {p.category}
                     </span>
                   </div>
-                  <div className="bg-ink-800 p-5">
-                    <h3 className="text-base">{p.title}</h3>
-                    <p className="mt-1.5 text-sm text-steel-400">{p.summary}</p>
+                  <div className="flex h-56 flex-col p-6">
+                    <h3 className="text-lg text-white">{p.title}</h3>
+                    <p className="mt-2 line-clamp-3 flex-1 text-sm text-white/60">{p.summary}</p>
                   </div>
                 </div>
               </Reveal>
@@ -275,7 +267,7 @@ export default function HomePage() {
                   alt={c.name}
                   fill
                   sizes="140px"
-                  className="object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                  className="object-contain"
                 />
               </div>
             ))}
@@ -301,7 +293,7 @@ export default function HomePage() {
                 { n: '3', t: 'Déjanos tus datos de contacto' },
               ].map((s) => (
                 <div key={s.n} className="flex items-center gap-4">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-artel-green/15 font-display text-artel-green-600">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-artel-blue-400 font-display text-white">
                     {s.n}
                   </span>
                   <span className="text-steel-200">{s.t}</span>
@@ -312,7 +304,7 @@ export default function HomePage() {
               <WaButton
                 location="home_form_section"
                 message="Hola ARTEL, me interesa cotizar un proyecto de infraestructura."
-                className="btn btn-whatsapp"
+                className="btn-pill-whatsapp"
               >
                 Prefiero WhatsApp
               </WaButton>

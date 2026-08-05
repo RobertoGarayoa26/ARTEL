@@ -42,13 +42,13 @@ export default function ProyectosPage() {
             <p className="mt-2 text-steel-300">Cuéntanos el alcance y te preparamos una propuesta.</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link href="/contacto" className="btn btn-primary">
+            <Link href="/contacto" className="btn-accent">
               Cotizar proyecto <ArrowRight className="h-4 w-4" />
             </Link>
             <WaButton
               location="proyectos_cta"
               message="Hola ARTEL, vi sus proyectos y quiero cotizar uno similar."
-              className="btn btn-whatsapp"
+              className="btn-pill-whatsapp"
             >
               WhatsApp
             </WaButton>

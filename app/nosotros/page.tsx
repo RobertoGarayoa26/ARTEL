@@ -74,7 +74,7 @@ export default function NosotrosPage() {
         </div>
         <div className="container-x w-full">
           <Reveal>
-            <span className="eyebrow !text-artel-green-400">Nosotros</span>
+            <span className="eyebrow !text-artel-cyan">Nosotros</span>
             <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-[1.08] text-white sm:text-5xl">
               ARTEL
             </h1>
@@ -85,21 +85,25 @@ export default function NosotrosPage() {
 
           {/* Métricas */}
           <Reveal delay={280}>
-            <div className="mt-14 grid grid-cols-2 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
+            <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 border-t border-white/10 pt-8 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 { icon: Calendar, v: 'Desde 2020', l: 'En el mercado' },
                 { icon: Trophy, v: '+100', l: 'Proyectos en nuestro portafolio' },
                 { icon: Building2, v: '+100', l: 'Clientes que confían en ARTEL' },
-              ].map((t) => (
-                <div key={t.l} className="flex items-start gap-3">
-                  <t.icon className="mt-0.5 h-5 w-5 text-artel-green-400" />
-                  <div>
-                    <p className="font-display text-lg text-white">
-                      <Counter value={t.v} />
-                    </p>
-                    <p className="text-xs text-white/60">{t.l}</p>
+              ].map((t, i) => (
+                <Reveal key={t.l} delay={i * 60}>
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-inset ring-white/15">
+                      <t.icon className="h-6 w-6 text-artel-cyan" />
+                    </div>
+                    <div>
+                      <p className="text-accent font-display text-3xl font-extrabold leading-none tabular-nums sm:text-4xl">
+                        <Counter value={t.v} />
+                      </p>
+                      <p className="mt-1.5 text-sm text-white/60">{t.l}</p>
+                    </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </Reveal>
@@ -118,12 +122,12 @@ export default function NosotrosPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((c, i) => (
               <Reveal key={c.title} delay={i * 60}>
-                <div className="h-full rounded-2xl bg-ink-800 p-6 ring-1 ring-black/10 shadow-sm">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-artel-green/15">
-                    <c.icon className="h-5 w-5 text-artel-green-600" />
+                <div className="h-full rounded-2xl bg-noir p-6 ring-1 ring-white/10">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 ring-1 ring-inset ring-white/15">
+                    <c.icon className="h-5 w-5 text-artel-cyan" />
                   </div>
-                  <h3 className="mt-4 text-lg">{c.title}</h3>
-                  <p className="mt-2 text-sm text-steel-300">{c.text}</p>
+                  <h3 className="mt-4 text-lg text-white">{c.title}</h3>
+                  <p className="mt-2 text-sm text-white/60">{c.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -140,12 +144,12 @@ export default function NosotrosPage() {
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             <Reveal>
-              <div className="h-full rounded-2xl bg-ink-800 p-6 ring-1 ring-black/10 shadow-sm">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-artel-green/15">
-                  <Target className="h-5 w-5 text-artel-green-600" />
+              <div className="h-full rounded-2xl bg-noir p-6 ring-1 ring-white/10">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 ring-1 ring-inset ring-white/15">
+                  <Target className="h-5 w-5 text-artel-cyan" />
                 </div>
-                <h3 className="mt-4 text-lg">Misión</h3>
-                <p className="mt-2 text-sm text-steel-300">
+                <h3 className="mt-4 text-lg text-white">Misión</h3>
+                <p className="mt-2 text-sm text-white/60">
                   Mantener en operación continua la infraestructura de nuestros clientes, con
                   ingeniería propia, cumplimiento normativo y tiempos de respuesta que protegen su
                   operación.
@@ -153,12 +157,12 @@ export default function NosotrosPage() {
               </div>
             </Reveal>
             <Reveal delay={60}>
-              <div className="h-full rounded-2xl bg-ink-800 p-6 ring-1 ring-black/10 shadow-sm">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-artel-green/15">
-                  <Eye className="h-5 w-5 text-artel-green-600" />
+              <div className="h-full rounded-2xl bg-noir p-6 ring-1 ring-white/10">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 ring-1 ring-inset ring-white/15">
+                  <Eye className="h-5 w-5 text-artel-cyan" />
                 </div>
-                <h3 className="mt-4 text-lg">Visión</h3>
-                <p className="mt-2 text-sm text-steel-300">
+                <h3 className="mt-4 text-lg text-white">Visión</h3>
+                <p className="mt-2 text-sm text-white/60">
                   Ser el proveedor de referencia en infraestructura en México, integrando cada
                   especialidad bajo un solo punto de contacto y un compromiso de calidad
                   constante.
@@ -166,12 +170,12 @@ export default function NosotrosPage() {
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <div className="h-full rounded-2xl bg-ink-800 p-6 ring-1 ring-black/10 shadow-sm">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-artel-green/15">
-                  <HeartHandshake className="h-5 w-5 text-artel-green-600" />
+              <div className="h-full rounded-2xl bg-noir p-6 ring-1 ring-white/10">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 ring-1 ring-inset ring-white/15">
+                  <HeartHandshake className="h-5 w-5 text-artel-cyan" />
                 </div>
-                <h3 className="mt-4 text-lg">Valores</h3>
-                <p className="mt-2 text-sm text-steel-300">
+                <h3 className="mt-4 text-lg text-white">Valores</h3>
+                <p className="mt-2 text-sm text-white/60">
                   Cumplimiento normativo, trazabilidad de cada servicio, tiempos de respuesta que
                   respetamos y una relación de largo plazo con cada cliente.
                 </p>
@@ -192,7 +196,7 @@ export default function NosotrosPage() {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <div className="flex items-center gap-2 text-artel-green-600">
+            <div className="flex items-center gap-2 text-artel-cyan">
               <Users className="h-5 w-5" />
               <span className="eyebrow">A quién atendemos</span>
             </div>
@@ -202,7 +206,7 @@ export default function NosotrosPage() {
               de operaciones, gerentes de flota, administradores de infraestructura y responsables
               de mantenimiento: empresas que no pueden permitirse un paro no planeado.
             </p>
-            <Link href="/contacto" className="btn btn-primary mt-8">
+            <Link href="/contacto" className="btn-accent mt-8">
               Hablemos de tu proyecto <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
@@ -211,13 +215,13 @@ export default function NosotrosPage() {
 
       {/* CTA */}
       <section className="py-16">
-        <div className="container-x flex flex-col items-start justify-between gap-6 rounded-2xl bg-gradient-to-br from-artel-blue/10 to-artel-green/10 p-8 ring-1 ring-black/10 sm:flex-row sm:items-center">
+        <div className="container-x flex flex-col items-start justify-between gap-6 rounded-2xl bg-gradient-to-br from-artel-blue/10 to-artel-cyan/10 p-8 ring-1 ring-black/10 sm:flex-row sm:items-center">
           <h2 className="max-w-lg text-2xl">
             ¿Listo para integrar tu infraestructura con un solo aliado?
           </h2>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link href="/contacto" className="btn btn-primary">Cotizar</Link>
-            <WaButton location="nosotros_cta" message="Hola ARTEL, quiero conocer más sobre su capacidad técnica." className="btn btn-whatsapp">
+            <Link href="/contacto" className="btn-accent">Cotizar</Link>
+            <WaButton location="nosotros_cta" message="Hola ARTEL, quiero conocer más sobre su capacidad técnica." className="btn-pill-whatsapp">
               WhatsApp
             </WaButton>
           </div>

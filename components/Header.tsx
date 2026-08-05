@@ -16,11 +16,11 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur-md ring-1 ring-black/5">
+    <header className="fixed inset-x-0 top-0 z-50 bg-noir/90 backdrop-blur-md ring-1 ring-white/10">
       <div className="container-x flex h-16 items-center justify-between md:h-20">
         <Link href="/" className="flex items-center gap-2" aria-label="ARTEL — Inicio">
           <Image
-            src="/media/logo-artel.png"
+            src="/media/logo-artel-blanco.png"
             alt="ARTEL"
             width={111}
             height={28}
@@ -39,13 +39,13 @@ export function Header() {
                 onMouseEnter={() => setLinesOpen(true)}
                 onMouseLeave={() => setLinesOpen(false)}
               >
-                <button className="flex items-center gap-1 text-sm font-medium text-steel-300 transition-colors hover:text-steel-200">
+                <button className="flex items-center gap-1 text-sm font-medium text-white/70 transition-colors hover:text-white">
                   {item.label}
                   <ChevronDown className="h-4 w-4" />
                 </button>
                 {linesOpen && (
                   <div className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3">
-                    <div className="card overflow-hidden p-2 shadow-2xl shadow-black/10">
+                    <div className="card overflow-hidden p-2 shadow-2xl shadow-black/20">
                       {item.children.map((c) => (
                         <Link
                           key={c.href}
@@ -63,7 +63,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-steel-300 transition-colors hover:text-steel-200"
+                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
               >
                 {item.label}
               </Link>
@@ -77,18 +77,18 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track('whatsapp_click', { location: 'header' })}
-            className="btn btn-whatsapp"
+            className="btn-pill-whatsapp !px-5 !py-2.5 !text-sm"
           >
             WhatsApp
           </a>
-          <Link href="/contacto" className="btn btn-primary">
+          <Link href="/contacto" className="btn-accent !px-5 !py-2.5 !text-sm">
             Cotizar
           </Link>
         </div>
 
         {/* Botón móvil */}
         <button
-          className="text-steel-200 transition-colors md:hidden"
+          className="text-white transition-colors md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Abrir menú"
         >
@@ -134,11 +134,11 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track('whatsapp_click', { location: 'mobile_menu' })}
-                className="btn btn-whatsapp w-full"
+                className="btn-pill-whatsapp w-full"
               >
                 WhatsApp directo
               </a>
-              <Link href="/contacto" onClick={() => setOpen(false)} className="btn btn-primary w-full">
+              <Link href="/contacto" onClick={() => setOpen(false)} className="btn-accent w-full">
                 Cotizar ahora
               </Link>
             </div>

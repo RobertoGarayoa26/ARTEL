@@ -62,8 +62,8 @@ export function StepForm({ defaultInterest, compact }: Props) {
   if (status === 'ok') {
     return (
       <div className="card p-8 text-center">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-artel-green/15">
-          <Check className="h-7 w-7 text-artel-green-600" />
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-artel-cyan/15">
+          <Check className="h-7 w-7 text-artel-blue-600" />
         </div>
         <h3 className="text-xl">¡Solicitud enviada!</h3>
         <p className="mt-2 text-sm text-steel-300">
@@ -83,16 +83,16 @@ export function StepForm({ defaultInterest, compact }: Props) {
             <div
               className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-colors ${
                 i < step
-                  ? 'bg-artel-green text-white'
+                  ? 'bg-artel-blue-400 text-white'
                   : i === step
-                  ? 'bg-artel-green/15 text-artel-green-600 ring-2 ring-artel-green'
+                  ? 'bg-artel-blue/10 text-artel-blue-600 ring-2 ring-artel-blue-400'
                   : 'bg-black/5 text-steel-400'
               }`}
             >
               {i < step ? <Check className="h-4 w-4" /> : i + 1}
             </div>
             {i < STEPS.length - 1 && (
-              <div className={`h-0.5 flex-1 rounded ${i < step ? 'bg-artel-green' : 'bg-black/10'}`} />
+              <div className={`h-0.5 flex-1 rounded ${i < step ? 'bg-artel-blue-400' : 'bg-black/10'}`} />
             )}
           </div>
         ))}
@@ -114,7 +114,7 @@ export function StepForm({ defaultInterest, compact }: Props) {
               }}
               className={`flex items-center justify-between rounded-xl border px-4 py-3.5 text-left text-sm transition-all ${
                 data.interest === opt
-                  ? 'border-artel-green bg-artel-green/10 text-steel-200'
+                  ? 'border-artel-blue-400 bg-artel-blue/10 text-steel-200'
                   : 'border-black/10 bg-black/[0.02] text-steel-200 hover:border-black/20'
               }`}
             >
@@ -199,7 +199,7 @@ export function StepForm({ defaultInterest, compact }: Props) {
             type="button"
             disabled={!canNext}
             onClick={() => setStep((s) => s + 1)}
-            className="btn btn-primary disabled:opacity-40 disabled:cursor-not-allowed"
+            className="btn-accent disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Continuar <ChevronRight className="h-4 w-4" />
           </button>
@@ -207,7 +207,7 @@ export function StepForm({ defaultInterest, compact }: Props) {
           <button
             type="submit"
             disabled={!canSubmit || status === 'sending'}
-            className="btn btn-primary disabled:opacity-40 disabled:cursor-not-allowed"
+            className="btn-accent disabled:opacity-40 disabled:cursor-not-allowed"
           >
             {status === 'sending' ? (
               <>
@@ -233,7 +233,7 @@ export function StepForm({ defaultInterest, compact }: Props) {
           transition: border-color 0.15s;
         }
         :global(.input:focus) {
-          border-color: #1f9e57;
+          border-color: #31d9b4;
         }
         :global(.input::placeholder) {
           color: #6b7280;

@@ -10,6 +10,11 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legacy */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Edge */
 }
 
 body {
@@ -46,9 +51,9 @@ h1, h2, h3, h4 {
 .btn-blue {
   @apply bg-artel-blue text-white hover:bg-artel-blue-600 focus-visible:ring-artel-blue;
 }
-/* Botón de WhatsApp — único uso permitido del verde de marca */
+/* Botón de WhatsApp — único uso permitido del verde de marca (efecto neón) */
 .btn-whatsapp {
-  @apply bg-artel-green text-white hover:bg-artel-green-600 focus-visible:ring-artel-green shadow-lg shadow-artel-green/20;
+  @apply bg-[#25D366] text-white shadow-[0_0_18px_rgba(37,211,102,0.65),0_0_40px_rgba(37,211,102,0.35)] transition-all hover:shadow-[0_0_24px_rgba(37,211,102,0.85),0_0_55px_rgba(37,211,102,0.5)] focus-visible:ring-[#25D366];
 }
 .btn-ghost {
   @apply text-steel-300 hover:text-steel-200;
@@ -61,7 +66,7 @@ h1, h2, h3, h4 {
 
 /* Etiqueta / eyebrow */
 .eyebrow {
-  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-artel-green-600;
+  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-artel-blue;
 }
 
 /* Enlaces de texto */
@@ -79,6 +84,51 @@ h1, h2, h3, h4 {
 /* Scrollbar sutil */
 ::selection {
   background: rgba(31, 158, 87, 0.35);
+}
+
+/* Sistema de acento — estreno en Inicio, se propaga al resto del sitio una
+   vez aprobado. Color de acento: cian de marca (NO azul, NO el verde de
+   WhatsApp). No modifica .btn-primary ni .eyebrow globales.
+   NOTA: los colores/degradados de esta sección se escriben en CSS plano
+   (hex/rgba), NUNCA como utilidades de Tailwind basadas en theme.extend
+   (ej. bg-cyan-gradient), porque @apply puede fallar a compilar si el
+   servidor de desarrollo no recargó el config todavía. Así evitamos ese
+   error de forma permanente. */
+.text-accent {
+  @apply inline-block bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #5EEAD4 0%, #31D9B4 45%, #0EA5B8 100%);
+}
+.btn-accent {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+  background-image: linear-gradient(135deg, #3E7BD6 0%, #2B6EFF 100%);
+  box-shadow: 0 0 18px rgba(43, 110, 255, 0.55), 0 0 40px rgba(43, 110, 255, 0.3);
+}
+.btn-accent:hover {
+  box-shadow: 0 0 24px rgba(43, 110, 255, 0.75), 0 0 55px rgba(43, 110, 255, 0.45);
+}
+.btn-pill-dark {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-white/10 px-7 py-3.5 text-base font-semibold text-white ring-1 ring-inset ring-white/20 transition-colors duration-200 hover:bg-white/20;
+}
+.btn-pill-light {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-black/5 px-7 py-3.5 text-base font-semibold text-steel-200 ring-1 ring-inset ring-black/10 transition-colors duration-200 hover:bg-black/10;
+}
+.btn-pill-whatsapp {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-all duration-200 hover:scale-[1.03];
+  background-color: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.65), 0 0 40px rgba(37, 211, 102, 0.35);
+}
+.btn-pill-whatsapp:hover {
+  box-shadow: 0 0 24px rgba(37, 211, 102, 0.85), 0 0 55px rgba(37, 211, 102, 0.5);
+}
+.icon-badge {
+  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl;
+  background-color: #31D9B4;
+  color: #0B0E14;
+  box-shadow: 0 4px 14px rgba(49, 217, 180, 0.3);
+}
+.glow-blob {
+  @apply pointer-events-none absolute rounded-full blur-3xl;
 }
 
 /* Carrusel de logos de clientes */
