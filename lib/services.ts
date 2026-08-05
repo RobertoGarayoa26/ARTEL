@@ -31,7 +31,7 @@ export type Service = {
   pains: string[];
   solutions: { title: string; text: string }[];
   scopeLabel: string; // etiqueta del "alcance" en el form (ej. N° de sitios)
-  process: { step: string; title: string; text: string }[];
+  process: { step: string; title: string; text: string; image?: string }[];
   capabilities: string[];
   stats: { value: string; label: string }[];
   gallery: string[];
@@ -531,10 +531,10 @@ export const services: Service[] = [
     ],
     scopeLabel: 'Alcance del proyecto (estudio, ingeniería de detalle, automatización)',
     process: [
-      { step: '01', title: 'Diagnóstico inicial', text: 'Levantamiento de información y objetivos del proyecto.' },
-      { step: '02', title: 'Estudio y propuesta', text: 'Análisis técnico y propuesta de solución.' },
-      { step: '03', title: 'Ingeniería de detalle', text: 'Memoria de cálculo, planos y especificaciones.' },
-      { step: '04', title: 'Acompañamiento', text: 'Seguimiento durante ejecución y cumplimiento normativo.' },
+      { step: '01', title: 'Diagnóstico inicial', text: 'Levantamiento de información y objetivos del proyecto.', image: '/media/consultoria-proceso-1.webp' },
+      { step: '02', title: 'Estudio y propuesta', text: 'Análisis técnico y propuesta de solución.', image: '/media/consultoria-proceso-2.webp' },
+      { step: '03', title: 'Ingeniería de detalle', text: 'Memoria de cálculo, planos y especificaciones.', image: '/media/consultoria-proceso-3.webp' },
+      { step: '04', title: 'Acompañamiento', text: 'Seguimiento durante ejecución y cumplimiento normativo.', image: '/media/consultoria-proceso-4.webp' },
     ],
     capabilities: [
       'Estudios de factibilidad técnica y normativa',
